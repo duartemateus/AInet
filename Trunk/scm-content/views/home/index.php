@@ -5,10 +5,10 @@
     $body_onload=""; 
     include_once VIEWS_DIR.'header_open.php';
     // INICIO todos os includes e scripts particulares da pagina
-    echo "<link rel='stylesheet' href='STYLES_DIR/slider.css' type='text/css'/>\n"; 
-    echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.cycle.all.js'></script>\n";
-    echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.easing.1.3.js'></script>"; 
-    echo "<script type='text/javascript' src='JS_DIR/slider.js'></script>\n";  
+    echo "<link rel='stylesheet' href='".STYLES_DIR."slider.css' type='text/css'/>\n";     
+    echo "<script type='text/javascript' src='".INCLUDES_DIR."jquery.cycle.all.js'></script>\n";
+    echo "<script type='text/javascript' src='".INCLUDES_DIR."jquery.easing.1.3.js'></script>"; 
+    echo "<script type='text/javascript' src='".JS_DIR."slider.js'></script>\n";  
     // END 
     include_once VIEWS_DIR.'header_close.php';
     include_once VIEWS_DIR.'top.php';
@@ -243,4 +243,4 @@
         </div>
     </div>
 </div>
-<?php include_once '../footer.php'; ?>
+<?php include_once 'views/footer.php'; ?>
