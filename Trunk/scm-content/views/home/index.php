@@ -1,8 +1,4 @@
 <?php 
-    $title="Santa Casa da Misericórdia de Leiria" ;
-    $keywords="";
-    $description=""; 
-    $body_onload=""; 
     include_once VIEWS_DIR.'header_open.php';
     // INICIO todos os includes e scripts particulares da pagina
     echo "<link rel='stylesheet' href='".STYLES_DIR."slider.css' type='text/css'/>\n";     

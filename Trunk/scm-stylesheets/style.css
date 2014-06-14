@@ -383,7 +383,7 @@ div#imagesholder a div.imageholder h1 {
     line-height: 1.5;
     text-decoration: none;
     font-weight: bolder;
-    color: #224;
+    color: black;
 }
 div#imagesholder div.imageholder,
 div#imagesholder div.imageholder div {
@@ -408,31 +408,12 @@ div#imagesholder a:hover {
     z-index: 1;
 }
 div#imagesholder a:hover,
-div#imagesholder a:hover div {
-    background-color: #ddd;
+div#imagesholder a:hover div.imageholder{
+    background-color: #EDEDED;
 }
-div#imagesholder a:hover:after,
-div#imagesholder a:hover div.imageholder:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 50%;
-    bottom: -2px;
-    border-style: solid;
-    margin-left: -11px;
-    /* value should match border-width */
-    border-width: 11px;
-    /* value should match margin-left */
-    border-color: transparent transparent silver transparent;
-}
-div#imagesholder a:hover div.imageholder:after {
-    bottom: 0px;
-    margin-left: -12px;
-    /* value should match border-width */
-    border-width: 12px;
-    /* value should match margin-left */
-    border-color: transparent transparent gray transparent;
+
+div#imagesholder a:hover div.imageholder h1{    
+    color: #3C5A80;
 }
 /* secondnavbar 
 -----------------------------------------------------------------------------*/
