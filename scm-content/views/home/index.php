@@ -1,15 +1,20 @@
-<?php require_once '../commons.php'; $title="Santa Casa da Misericórdia de Leiria" ; include_once '../header_1.php' ?>
-<!-- INICIO todos os includes e scripts particulares da pagina-->
-<link rel="stylesheet" href="../../scm-stylesheets/slider.css" type="text/css" />
-<script type="text/javascript" src="../../scm-includes/jquery.cycle.all.js"></script>
-<script type="text/javascript" src="../../scm-includes/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../../scm-javascripts/slider.js"></script>
-<!-- END -->
-<?php $body_onload="" ; include_once '../header_2.php'; ?>
-<div id="top" class="has_b_shadow">
-    <?php $firstnavbar=0; include_once '../firstnavbar.php'; ?>
-    <?php $secondnavbar=array($firstnavbar,0); include_once '../secondnavbar.php'; ?>
-</div>
+<?php 
+    $title="Santa Casa da Misericórdia de Leiria" ;
+    $keywords="";
+    $description=""; 
+    $body_onload=""; 
+    include_once VIEWS_DIR.'header_open.php' 
+    // INICIO todos os includes e scripts particulares da pagina
+    echo "<link rel='stylesheet' href='STYLES_DIR/slider.css' type='text/css'/>\n"; 
+    echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.cycle.all.js'></script>\n";
+    echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.easing.1.3.js'></script>"; 
+    echo "<script type='text/javascript' src='JS_DIR/slider.js'></script>\n";  
+    // END 
+    include_once VIEWS_DIR.'header_close.php';
+    include_once VIEWS_DIR.'top.php'    
+?>
+
+
 <div id="middle" class="wrapper">
     <div id="container" class="has_borders">
         <div class="content-row cf has_b_shadow">

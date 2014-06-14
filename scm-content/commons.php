@@ -1,1 +1,0 @@
-<?php $title=" " ; $keywords="" ;$description="" ; $body_onload="" ; ?>
