@@ -15,3 +15,7 @@
     include_once VIEWS_DIR.'header_close.php';
     include_once VIEWS_DIR.'top.php'    
 ?>
+
+<?php   
+    include_once VIEWS_DIR.'footer.php'
+?>
