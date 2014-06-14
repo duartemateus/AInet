@@ -6,7 +6,7 @@
                     <div class="content-row">
                         <div class="content">
                             <a href="../home/index.html">
-                                <img src="../../scm-imagens/santa.png" alt="">
+                                <img src='<?php echo IMGS_DIR."santa.png" ?>'alt="">
                             </a>
                         </div>
                     </div>

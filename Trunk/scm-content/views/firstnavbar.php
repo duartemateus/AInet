@@ -4,7 +4,7 @@
     <div class="wrapper">
         <div class="imageholder">
             <a href="./index.php">
-                <img src="../../scm-imagens/santa.png" alt="">
+                <img src='<?php echo IMGS_DIR."santa.png" ?>' alt="">
             </a>
         </div>
     </div>
