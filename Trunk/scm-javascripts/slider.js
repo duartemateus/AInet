@@ -10,7 +10,7 @@ $(function () {
         before: function (currSlideElement, nextSlideElement) {
             var content = $('.item-content', $(nextSlideElement)).html();
             $('.slider-wrapper.presentation .slider-content').stop(true, true).animate({
-                top: '-110px'
+                top: '0'
             }, 400, function () {
                 $('.slider-wrapper.presentation .slider-content .item-content').html(content);
             });
@@ -23,10 +23,10 @@ $(function () {
     $('.slider-wrapper.presentation').mouseenter(function () {
         $('.slider.presentation').cycle('pause');
         $('.slider-wrapper.presentation .slider-content-previous').stop(true, true).animate({
-            left: '20px'
+            left: '5px'
         }, 200);
         $('.slider-wrapper.presentation .slider-content-next').stop(true, true).animate({
-            right: '20px'
+            right: '5px'
         }, 200);
     }).mouseleave(function () {
         $('.slider.presentation').cycle('resume');
