@@ -11,7 +11,7 @@
     echo "<script type='text/javascript' src='JS_DIR/slider.js'></script>\n";  
     // END 
     include_once VIEWS_DIR.'header_close.php';
-    include_once VIEWS_DIR.'top.php'    
+    include_once VIEWS_DIR.'top.php';
 ?>
 
 
