@@ -3,7 +3,7 @@
     $keywords="";
     $description=""; 
     $body_onload=""; 
-    include_once VIEWS_DIR.'header_open.php' 
+    include_once VIEWS_DIR.'header_open.php';
     // INICIO todos os includes e scripts particulares da pagina
     echo "<link rel='stylesheet' href='STYLES_DIR/slider.css' type='text/css'/>\n"; 
     echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.cycle.all.js'></script>\n";
@@ -32,7 +32,7 @@
                     <?php for($i=0 ; $i<4; $i++){ echo "<div class='slider-item'>\n
                             <div class='image'>\n
                                 <a href='#'>\n
-                                    <img src='../../scm-imagens/wide_image_sample.jpg' alt='' />\n
+                                    <img src='IMGS_DIR/wide_image_sample.jpg' alt='' />\n
                                 </a>\n
                             </div>\n
                             <div class='item-content '></div>\n
