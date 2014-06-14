@@ -32,7 +32,7 @@
                     <?php for($i=0 ; $i<4; $i++){ echo "<div class='slider-item'>\n
                             <div class='image'>\n
                                 <a href='#'>\n
-                                    <img src='../../scm-imagens/wide_image_sample.jpg' alt='' />\n
+                                    <img src='IMGS_DIR/wide_image_sample.jpg' alt='' />\n
                                 </a>\n
                             </div>\n
                             <div class='item-content '></div>\n
