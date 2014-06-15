@@ -10,13 +10,13 @@
                         </li>\n" ;
                         break;
                     case 1: $str="<li" .($secondnavbar[1]==1 ? " class='active'": ""). ">\n
-                            <a href='../saude/areas-clinicas.php'>Áreas Clínicas</a>\n
+                            <a href='saude_areas.php'>Áreas Clínicas</a>\n
                         </li>\n
                         <li".($secondnavbar[1]==2 ? " class='active'": ""). ">\n
                             <a href='../saude/equipa-clinica.php'>Equipa Clínica</a>\n
                         </li>\n
                         <li".($secondnavbar[1]==3 ? " class='active'": ""). ">\n
-                            <a href='../saude/marcacao-consulta.php'>Marcação de Consulta</a>\n
+                            <a href='saude_marcacao.php'>Marcação de Consulta</a>\n
                         </li>\n";
                         break;
                     case 2: break;
