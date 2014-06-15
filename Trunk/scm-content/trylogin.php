@@ -46,6 +46,7 @@ if ($db_found) {
 $SQL = "SELECT * FROM scml_user WHERE email = $uname";
 $result = mysql_query($SQL);
 $num_rows = mysql_num_rows($result);
+echo "mysql_num_rows($result)";
 
 if ($num_rows > 0) {
 
