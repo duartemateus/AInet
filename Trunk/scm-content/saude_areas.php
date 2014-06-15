@@ -16,10 +16,10 @@ if(isset($_GET) && count($_GET)){
 $con = mysqli_connect('localhost', 'scml', 'scmladmin','scml_db');
 // Check connection
 if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    $areas_clinicas = "";
+}else{
+    $areas_clinicas = mysqli_query($con,"SELECT * FROM clinical_specialty ORDER BY short_name");
 }
-$areas_clinicas = mysqli_query($con,"SELECT * FROM clinical_specialty ORDER BY short_name");
-
 
 // LOAD VIEWS
 include_once VIEWS_DIR.'header_open.php';
@@ -46,7 +46,7 @@ echo "</script>\n";
 include_once VIEWS_DIR.'header_close.php';
 include_once VIEWS_DIR.'top.php';
 
-
+$my_area_clinica = "";
 include_once 'views/saude/saude_areas.php';
 
 

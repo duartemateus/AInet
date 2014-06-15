@@ -5,12 +5,12 @@
 /*  #C60 #D80 #EA0 */
 
 /*      BLUES:      
-/*  #3C5A80 #69C #9CF #CAE5FF */
+/*  #468 #58A #3C5A80 #69C #9CF #CAE5FF */
 
 /*      GREYS       
 /*  #CBCBCB #DCDCDC #EDEDED */
 
-body {
+body { 
     font-size: 14px;
     font-family: 'VegurLight', 'Myriad Pro', 'Orienta', Arial, Helvetica, Sans-Serif;
     position: relative;
@@ -18,9 +18,9 @@ body {
     background-image: url(../scm-imagens/pw_pattern_@2X.png);
 }
 h1,
-h2,
+h2, 
 h3,
-h4 {
+h4 { 
     margin: 0.8em 0 0.5em 0;
     color: #333;
     font-weight: normal;
@@ -31,7 +31,7 @@ h1 {
 }
 h2 {
     font-size: 30px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #eee;
     padding-bottom: 10px;
 }
 h3 {
@@ -567,8 +567,8 @@ div#middle div.titulo h1 {
 div.has_sidebar div#sidebar {
     position: relative;
     float: left;
-    width: 20%;
-    background-color: #3C5A80;
+    width: 22%;
+    background-color: #468;
     border-radius: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -597,8 +597,8 @@ div.has_sidebar div#sidebar p:hover {
 -----------------------------------------------------------------------------*/
 
 div.has_sidebar div#container {
-    width: 78%;
-    left: 2%;
+    width: 77%;
+    left: 1%;
     float: left;
 }
 div#container {
@@ -940,11 +940,11 @@ div.has_sidebar div#sidebar a.active p:hover {
     border-width: 0;
     background: #D80;
 }
-div.has_sidebar div#sidebar a.active p:before {
+div.has_sidebar div#sidebar a.active p:after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 0px;
+    height: 0px;
     right: 0;
     border-style: solid;
     bottom: 0;
