@@ -568,7 +568,7 @@ div.has_sidebar div#sidebar {
     position: relative;
     float: left;
     width: 20%;
-    background-color: #69C;
+    background-color: #3C5A80;
     border-radius: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -583,30 +583,15 @@ div.has_sidebar div#sidebar p {
     white-space: nowrap;
     vertical-align: middle;
     color: white;
+    border-bottom: 1px solid #CBCBCB; 
     /*  #CBCBCB #DCDCDC #EDEDED */
-    background-color: #3C5A80;
-    background: -webkit-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Safari */
-    background: -o-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Opera */
-    background: -moz-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Firefox */
-    background: linear-gradient(#69C, #3C5A80, #69C);
     /* Standard syntax (must be last) */
 }
 div.has_sidebar div#sidebar p:hover {
     color: white;
     text-shadow: 0px 0px 2px gray;
     /*  #3C5A80 #69C #9CF #CAE5FF */
-    background-color: #3C5A80;
-    background: -webkit-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Safari */
-    background: -o-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Opera */
-    background: -moz-linear-gradient(#69C, #3C5A80, #69C);
-    /* For Firefox */
-    background: linear-gradient(#69C, #3C5A80, #69C);
-    /* Standard syntax (must be last) */
+    background-color: #47a;
 }
 /* Container da página 
 -----------------------------------------------------------------------------*/
@@ -951,13 +936,9 @@ div.has_sidebar div#sidebar a.active p:hover {
     position: relative;
     text-shadow: none;
     box-shadow: none;
-    margin: 0.5em 0;
-    padding: 20px;
-    padding-left: 10px;
     border-radius: 0;
     border-width: 0;
     background: #D80;
-    box-shadow: 0 0 10px gray;
 }
 div.has_sidebar div#sidebar a.active p:before {
     content: '';
@@ -967,9 +948,9 @@ div.has_sidebar div#sidebar a.active p:before {
     right: 0;
     border-style: solid;
     bottom: 0;
-    margin-right: -54px;
+    margin-right: -34px;
     /* 2 x padding + fontsize*/
-    border-width: 27px;
+    border-width: 17px;
     /* */
     border-color: transparent transparent transparent #D80;
 }
