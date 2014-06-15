@@ -551,7 +551,7 @@ div#searchholder button[type=submit]:hover {
 div#middle {
     min-width: 1000px;
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 40px;
 }
 div#middle div.titulo {
     text-indent: 40px;
