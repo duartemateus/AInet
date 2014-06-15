@@ -5,11 +5,13 @@
         <ul id="nav">
             <?php $str='' ;
                 switch ($secondnavbar[0]){ 
-                    case 0: $str="<li class='disabled'>\n
+                    case 0:
+                    $str="<li class='disabled'>\n
                             <a href='#'><p>O SABER DA EXPERIÊNCIA (500 ANOS DE HISTÓRIA)<p></a>\n
                         </li>\n" ;
                         break;
-                    case 1: $str="<li" .($secondnavbar[1]==1 ? " class='active'": ""). ">\n
+                    case 1:
+                    $str="<li".($secondnavbar[1]==1 ? " class='active'": "").">\n
                             <a href='saude_areas.php'>Áreas Clínicas</a>\n
                         </li>\n
                         <li".($secondnavbar[1]==2 ? " class='active'": ""). ">\n

@@ -24,7 +24,6 @@ h4 {
     margin: 0.8em 0 0.5em 0;
     color: #333;
     font-weight: normal;
-    s
 }
 h1 {
     font-size: 36px;
@@ -339,6 +338,32 @@ div#top #logo .imageholder img {
 /* firstnavbar 
 -----------------------------------------------------------------------------*/
 
+div#zeronavbar {
+    background-color: white;
+    width: 100%;
+    background-color: gray;
+    border-bottom: 1px solid silver;
+}
+div#zeronavbar div.wrapper {
+}
+div#zeronavbar div.wrapper * {
+    display: inline-block;
+    margin: auto;
+}
+div#zeronavbar a {
+    float: right;
+    clear: none;
+    color: white;
+}
+div#zeronavbar a p{
+    padding: 5px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: #69C;
+}
+/* firstnavbar 
+-----------------------------------------------------------------------------*/
+
 div#firstnavbar {
     background-color: white;
     width: 100%;
@@ -447,7 +472,6 @@ ul#nav li {
     float: left;
     clear: none;
     text-align: left;
-    display: inline-block;
     position: relative;
 }
 ul#nav ul {
@@ -511,7 +535,6 @@ ul#nav li.active:hover ul li a {
 ul#nav li.active:hover ul li a:hover,
 ul#nav li:hover ul li a:hover {
     text-shadow: none;
-    ;
     background: #69C;
     color: white;
 }
@@ -941,21 +964,25 @@ div.has_sidebar div#sidebar a.active p:hover {
     position: relative;
     text-shadow: none;
     box-shadow: none;
-    border-radius: 0;
-    border-width: 0;
     background: #D80;
 }
 div.has_sidebar div#sidebar a.active p:after {
     content: '';
     position: absolute;
-    width: 0px;
-    height: 0px;
-    right: 0;
+    width: 17px;
+    height: 34px;
+    right: -17px;
+    top: 0;
     border-style: solid;
-    bottom: 0;
-    margin-right: -34px;
+    border-width: 0;
+    border-bottom: 1px solid #CBCBCB; 
     /* 2 x padding + fontsize*/
-    border-width: 17px;
+    /*border-width: 17px;
     /* */
-    border-color: transparent transparent transparent #D80;
+    background-color: #D80;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    
+    
+    /*border-color: transparent transparent transparent #D80;
 }

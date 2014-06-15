@@ -34,14 +34,13 @@ class controllers_Auth{
 					$_SESSION[self::EMAIL]=$email;
 					$_SESSION[self::USER_ID]=$userID;
 					return true;
-
 				}
 			}
 			$stmt->free_result();
 		}
 		return $this->isAuthenticated();
 	}
-	
+		
 	public function logOut(){
 		$_SESSION = array();
 		session_destroy();
