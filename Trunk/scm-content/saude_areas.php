@@ -1,5 +1,6 @@
 <?php 
 require_once 'controllers/commons.php'; 
+require_once 'login.php';
 // vars
 $title="Santa Casa da Misericórdia de Leiria" ;
 $keywords="";

@@ -10,7 +10,9 @@ define ('JS_DIR','../scm-javascripts/');
 define ('STYLES_DIR','../scm-stylesheets/');
  
 
-spl_autoload_register(function ($class) {
-    include 'classes/' . $class . '.class.php';
-});
+spl_autoload_register(
+	function ($class){
+		require_once ROOT_DIR.str_replace('_','/',$class).'.php';
+	}
+);
 ?>

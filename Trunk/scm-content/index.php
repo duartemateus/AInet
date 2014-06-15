@@ -1,5 +1,6 @@
 <?php 
-require_once 'controllers/commons.php'; 
+require_once 'controllers/commons.php';
+include_once ROOT_DIR.'login.php';
 $title="Santa Casa da Misericórdia de Leiria" ;
 $keywords="";
 $description=""; 
