@@ -3,9 +3,9 @@
     $keywords="";
     $description=""; 
     $body_onload=""; 
-    $firstnavbar=0
-    $secondnavbar=array($firstnavbar,0)   
-    include_once VIEWS_DIR.'header_open.php' 
+    $firstnavbar=0;
+    $secondnavbar=array($firstnavbar,0);   
+    include_once VIEWS_DIR.'header_open.php';
     // INICIO todos os includes e scripts particulares da pagina
     echo "<link rel='stylesheet' href='STYLES_DIR/slider.css' type='text/css'/>\n"; 
     echo "<script type='text/javascript' src='INCLUDES_DIR/jquery.cycle.all.js'></script>\n";
