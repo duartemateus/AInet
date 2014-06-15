@@ -46,21 +46,16 @@
                 </div>
             </div>
         </div>
-        <div class="content-row">
-            <div id='credits'>
-                <div class='wrapper'>
-                    <div class="content-row">
-                        <div class="content">
-                            <hr>
-                            <p>
-                                <strong>Aplicações para a Internet</strong>Duarte Mateus, Filipe Silva, Joel Francisco</p>
-                        </div>
-                    </div>
+    </div>
+    <div class="content-row">
+        <div id='credits'>
+            <div class="content-row">
+                <div class="content">
+                    <p><strong>Aplicações para a Internet</strong>Duarte Mateus, Filipe Silva, Joel Francisco</p>
                 </div>
             </div>
         </div>
     </div>
-
 </footer>
 </body>
 

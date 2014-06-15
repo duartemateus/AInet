@@ -1,5 +1,5 @@
 <?php
-class model_DBConnection{
+class models_DBConnection{
 	const BD = 'scml_db';
 	const USER = 'scml';
 	const PASSWORD = 'scmladmin';

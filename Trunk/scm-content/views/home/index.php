@@ -1,4 +1,4 @@
-<div id="middle" class="wrapper">
+<div id="middle" class="wrapper united">
     <div id="container" class="has_borders">
         <div class="content-row cf has_b_shadow">
             <div class="slider-wrapper presentation">

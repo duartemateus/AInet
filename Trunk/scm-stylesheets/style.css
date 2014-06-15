@@ -551,7 +551,12 @@ div#searchholder button[type=submit]:hover {
 div#middle {
     min-width: 1000px;
     position: relative;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+div#middle.united{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 div#middle div.titulo {
     text-indent: 40px;
@@ -859,7 +864,7 @@ div.subnavbar a:hover p:before {}
 
 div#credits {
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0em;
     color: #111;
 }
 div#credits *{

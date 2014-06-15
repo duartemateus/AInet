@@ -1,8 +1,10 @@
 <?php
-class controller_Auth{
+class controllers_Auth{
 	const AUTHENTICATED = 'authenticated';
 	const EMAIL = 'authenticated';
 	const USER_ID = 'authenticated';
+    
+    
 	public function _construct() {
 		session_start();
 	}
@@ -12,7 +14,7 @@ class controller_Auth{
 	}
 	
 	public function authenticate($email, $password){
-		$db = new model_DBConnection();
+		$db = new models_DBConnection();
 		if(!$db->connected) 
 			return false;
 		

@@ -14,12 +14,11 @@ $area = 0;
 if(isset($_GET) && count($_GET)){
     $area = $_GET['area'];
 }
-$con = mysqli_connect('localhost', 'scml', 'scmladmin','scml_db');
-// Check connection
-if (mysqli_connect_errno()) {
-    $areas_clinicas = "";
+$db = new models_DBConnection();
+if ($db->connected) {
+    $areas_clinicas = mysqli_query($db->conn,"SELECT * FROM clinical_specialty ORDER BY short_name");
 }else{
-    $areas_clinicas = mysqli_query($con,"SELECT * FROM clinical_specialty ORDER BY short_name");
+    $areas_clinicas = "";
 }
 
 // LOAD VIEWS

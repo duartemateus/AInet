@@ -12,7 +12,7 @@ define ('STYLES_DIR','../scm-stylesheets/');
 
 spl_autoload_register(
 	function ($class){
-		require_once ROOT_DIR.str_replace('_','/',$class).'.php';
+		require_once str_replace('_','/',$class).'.php';
 	}
 );
 ?>
