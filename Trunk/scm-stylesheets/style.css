@@ -568,7 +568,10 @@ div.has_sidebar div#sidebar {
     position: relative;
     float: left;
     width: 20%;
-    background: transparent;
+    background-color: #69C;
+    border-radius: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     z-index: 1;
 }
 div.has_sidebar div#sidebar a {
@@ -576,24 +579,20 @@ div.has_sidebar div#sidebar a {
     vertical-align: middle;
 }
 div.has_sidebar div#sidebar p {
-    margin: 0.5em 0;
     padding: 10px;
     white-space: nowrap;
     vertical-align: middle;
-    color: black;
+    color: white;
     /*  #CBCBCB #DCDCDC #EDEDED */
-    background-color: #EDEDED;
-    background: -webkit-linear-gradient(#EDEDED, #DCDCDC, #EDEDED);
+    background-color: #3C5A80;
+    background: -webkit-linear-gradient(#69C, #3C5A80, #69C);
     /* For Safari */
-    background: -o-linear-gradient(#EDEDED, #DCDCDC, #EDEDED);
+    background: -o-linear-gradient(#69C, #3C5A80, #69C);
     /* For Opera */
-    background: -moz-linear-gradient(#EDEDED, #DCDCDC, #EDEDED);
+    background: -moz-linear-gradient(#69C, #3C5A80, #69C);
     /* For Firefox */
-    background: linear-gradient(#EDEDED, #DCDCDC, #EDEDED);
+    background: linear-gradient(#69C, #3C5A80, #69C);
     /* Standard syntax (must be last) */
-    border-width: 1px;
-    border-style: solid;
-    border-color: #D1D1DD;
 }
 div.has_sidebar div#sidebar p:hover {
     color: white;
