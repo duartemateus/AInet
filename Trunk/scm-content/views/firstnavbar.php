@@ -13,49 +13,49 @@
     <div class="wrapper">
         <div id="imagesholder">
             <!-- 2 divs por imagem -->
-            <a <?php echo $firstnavbar==1 ? 'class="active" ': '';?>href="../saude/areas-clinicas.php">
+            <a <?php echo $firstnavbar==1 ? 'class="active" ': '';?>href="saude_areas.php">
                 <div class="imageholder">
                     <div>
                         <h1>Saúde</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==2 ? 'class="active" ': '';?>href="../cuidados/cuidados.php">
+            <a <?php echo $firstnavbar==2 ? 'class="active" ': '';?>href="cuidados.php">
                 <div class="imageholder">
                     <div>
                         <h1>Cuidados Geriátricos</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==3 ? 'class="active" ': '';?>href="../creche/creche.php">
+            <a <?php echo $firstnavbar==3 ? 'class="active" ': '';?>href="creche.php">
                 <div class="imageholder">
                     <div>
                         <h1>Creche</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==4 ? 'class="active" ': '';?>href="../irmandade/irmandade.php">
+            <a <?php echo $firstnavbar==4 ? 'class="active" ': '';?>href="irmandade.php">
                 <div class="imageholder">
                     <div>
                         <h1>Irmandade</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==5 ? 'class="active" ': '';?>href="../contactos/contactos.php">
+            <a <?php echo $firstnavbar==5 ? 'class="active" ': '';?>href="contactos.php">
                 <div class="imageholder">
                     <div>
                         <h1>Contactos</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==6 ? 'class="active" ': '';?>href="../areapessoal/areapessoal.php">
+            <a <?php echo $firstnavbar==6 ? 'class="active" ': '';?>href="areapessoal.php">
                 <div class="imageholder">
                     <div>
                         <h1>Área Pessoal</h1>
                     </div>
                 </div>
             </a>
-            <a <?php echo $firstnavbar==7 ? 'class="active" ': '';?>href="../admin/admin.php">
+            <a <?php echo $firstnavbar==7 ? 'class="active" ': '';?>href="admin.php">
                 <div class="imageholder">
                     <div>
                         <h1>Administração</h1>
