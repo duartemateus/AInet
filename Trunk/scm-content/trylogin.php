@@ -1,8 +1,9 @@
 <?php
 require_once 'controllers/commons.php';
 
-$uname = "marco@mail.pt";
-$pword = crypt("marco");
+$uname = "marcus@mail.pt";
+$utilizador = 'marca';
+$pword = password_hash($utilizador, PASSWORD_DEFAULT);
 
 $uname = htmlspecialchars($uname);
 $pword = htmlspecialchars($pword);
@@ -43,13 +44,13 @@ $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) {
     echo "raistepartam";
 }
-$SQL = "SELECT * FROM scml_user WHERE email = 'marco@mail.pt'";
+$SQL = "SELECT * FROM scml_user WHERE email = '$uname'";
 $result = mysql_query($SQL);
 $num_rows = mysql_num_rows($result);
 echo "mysql_num_rows($result)";
 $row = mysql_fetch_row($result);
 $row = $row[2];
-if (password_verify("marco", $row)) {
+if (password_verify($utilizador, $row)) {
     echo 'Password is valid!';
 } else {
     echo 'Invalid password.';
@@ -62,10 +63,9 @@ if ($num_rows > 0) {
 } 
 else {
     echo "yousuck1";
-    $rape = password_hash("marco", PASSWORD_DEFAULT)."\n";
 $SQL = "INSERT INTO `person`(`id`, `name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`, `member_nr`, `patient_nr`) VALUES ('2','Crl','','gay','ali','aqui','12313','crap','marc4@gaymail.com','dsad','dsad','asda','dasd','asdad','asdas','adsa')";
     
-$SQL1 = "INSERT INTO `scml_user`(`id`, `email`, `hashed_password`, `salt`, `role`, `photo`, `photo_url`, `photo_mimetype`, `last_successful_login`, `invalid_login_attempts`, `active`, `created_at`, `updated_at`, `person_id`, `remember_token`) VALUES ('2','crap@gamladsad.pt','$rape','10','1','1','1','1','1','1','0','1','1','2','1')";
+$SQL1 = "INSERT INTO `scml_user`(`id`, `email`,`hashed_password` , `salt`, `role`, `photo`, `photo_url`, `photo_mimetype`, `last_successful_login`, `invalid_login_attempts`, `active`, `created_at`, `updated_at`, `person_id`, `remember_token`) VALUES ('2','crap@gamladsad.pt','$pword','10','1','1','1','1','1','1','0','1','1','2','1')";
 $result = mysql_query($SQL);
 $result = mysql_query($SQL1);
     
