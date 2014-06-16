@@ -83,8 +83,6 @@
                                 echo "<p>Telemóvel: ".$row['mobile_phone']."</p>";                            
                             }elseif(!$row['phone'] == NULL){
                                 echo "<p>Telefone: ".$row['phone']."</p>";    
-                            }else{
-                                echo "<p>Telefone: Não disponivel</p>"; 
                             }
                             echo "<p>Email: ".$row['email']."</p>";
                             
