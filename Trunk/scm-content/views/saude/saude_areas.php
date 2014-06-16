@@ -106,13 +106,6 @@
                         }
                     }
                 ?>
-                                     <!--       <p>Nome: </p>
-                                            <p>Telefone:</p>
-                                            <p>Email:</p>
-                                            <p>Disponibilidade:</p>
-                                        </div>
-                                    </div>-->
-                                    
             </div>
         </div>
         <div class="content-right">
