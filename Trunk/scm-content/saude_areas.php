@@ -18,7 +18,7 @@ $db = new models_DBConnection();
 if ($db->connected) {
     $areas_clinicas = mysqli_query($db->conn,"SELECT * FROM clinical_specialty ORDER BY short_name");
     $informacao_doutor = mysqli_query($db->conn,"SELECT d.id, d.name AS doctor_name, d.profile, cs.short_name AS specialty_name, ds.availability,
-                                      ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email
+                                      ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email, su.photo
                                       FROM doctor d, doctor_specialty ds, clinical_specialty cs, person p, scml_user su
                                       WHERE (d.id = ds.doctor_id AND cs.id = ds.clinical_specialty_id AND d.user_id = p.id AND p.id = su.id)");
 }else{

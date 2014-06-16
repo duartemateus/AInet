@@ -70,37 +70,48 @@
     <div class="content-row cf">
         <div class="content-left">
             <div class="content">
-                    <?php
-                        while($row = mysqli_fetch_array($informacao_doutor)){
-                            if ($row['clinical_specialty_id'] == $my_area_clinica['id']){
-                                echo "<div class='content-row'> \n
-                                        <div class='content-other cf'> \n
-                                            <div class='content-left'> \n
-                                                <div class='content'> \n";
-                                            
-                                echo "<p>Nome: ".$row['doctor_name']."</p>";
-                                if (!$row['mobile_phone'] == NULL){
-                                    echo "<p>Telemóvel: ".$row['mobile_phone']."</p>";                            
-                                }elseif(!$row['phone'] == NULL){
-                                    echo "<p>Telefone: ".$row['phone']."</p>";    
-                                }else{
-                                    echo "<p>Telefone: Não disponivel</p>"; 
-                                }
-                                                
-                                echo "          </div> \n
-                                            </div> \n
+                <?php
+                    while($row = mysqli_fetch_array($informacao_doutor)){
+                        if ($row['clinical_specialty_id'] == $my_area_clinica['id']){
+                            echo "<div class='content-row'> \n
+                                    <div class='content-other cf'> \n
+                                        <div class='content-left'> \n
+                                            <div class='content'> \n";
+                                        
+                            echo "<p>Nome: ".$row['doctor_name']."</p>";
+                            if (!$row['mobile_phone'] == NULL){
+                                echo "<p>Telemóvel: ".$row['mobile_phone']."</p>";                            
+                            }elseif(!$row['phone'] == NULL){
+                                echo "<p>Telefone: ".$row['phone']."</p>";    
+                            }else{
+                                echo "<p>Telefone: Não disponivel</p>"; 
+                            }
+                            echo "<p>Email: ".$row['email']."</p>";
+                            
+                            echo "          </div> \n
                                         </div> \n";
-                                }
-                                }
-                            ?><!--
-                                            <p>Nome: </p>
+                                            
+                            $doctor_image = null;
+                            if (!$row['photo'] == NULL){
+                                $doctor_image = $row['photo'];                                    
+                            } elseif (!$row['photo_url'] == NULL){
+                                $doctor_image = $row['photo_url'];                                      
+                            }
+                            echo "
+                                <div class='content-right'> \n
+                                    <img src='$doctor_image' alt='Imagem não disponivel'>";
+                                      
+                            echo "  </div> \n
+                                </div> \n";
+                        }
+                    }
+                ?>
+                                     <!--       <p>Nome: </p>
                                             <p>Telefone:</p>
                                             <p>Email:</p>
                                             <p>Disponibilidade:</p>
                                         </div>
-                                    </div>
-                                    <div class="content-right">
-                                        <img src="" alt="">-->
+                                    </div>-->
                                     
             </div>
         </div>
