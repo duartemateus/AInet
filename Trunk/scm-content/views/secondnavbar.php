@@ -15,7 +15,7 @@
                             <a href='saude_areas.php'>Áreas Clínicas</a>\n
                         </li>\n
                         <li".($secondnavbar[1]==2 ? " class='active'": ""). ">\n
-                            <a href='../saude/equipa-clinica.php'>Equipa Clínica</a>\n
+                            <a href='equipa_clinica.php'>Equipa Clínica</a>\n
                         </li>\n
                         <li".($secondnavbar[1]==3 ? " class='active'": ""). ">\n
                             <a href='saude_marcacao.php'>Marcação de Consulta</a>\n

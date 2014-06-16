@@ -51,7 +51,7 @@ include_once VIEWS_DIR.'header_close.php';
 include_once VIEWS_DIR.'top.php';
 
 $my_area_clinica = "";
-include_once 'views/saude/saude_areas.php';
+include_once VIEWS_DIR.'saude/saude_areas.php';
 
 
 include_once VIEWS_DIR.'footer.php';
