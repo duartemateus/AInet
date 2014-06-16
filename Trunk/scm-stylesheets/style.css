@@ -341,12 +341,10 @@ div#top #logo .imageholder img {
 div#zeronavbar {
     background-color: white;
     width: 100%;
-    background-color: gray;
-    border-bottom: 1px solid silver;
 }
-div#zeronavbar div.wrapper {
+div#zeronavbar div.zeronavbar {
 }
-div#zeronavbar div.wrapper * {
+div#zeronavbar div.zeronavbar * {
     display: inline-block;
     margin: auto;
 }
@@ -356,10 +354,20 @@ div#zeronavbar a {
     color: white;
 }
 div#zeronavbar a p{
+    margin-left: 5px;
+    font-size: 14px;
     padding: 5px;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
-    background-color: #69C;
+    color:gray;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    text-transform: lowercase;
+    font-weight: normal;
+}
+div#zeronavbar a:hover p{
+    color:black;
+}
+div#zeronavbar a p img{
+    height: 24px;
 }
 /* firstnavbar 
 -----------------------------------------------------------------------------*/
@@ -463,56 +471,55 @@ div#secondnavbar {
 }
 /*--- items do menu ---*/
 
-ul#nav {
+div#secondnavbar ul.nav {
     margin-left: 130px;
     line-height: 1;
     list-style: none;
 }
-ul#nav li {
+div#secondnavbar ul.nav li {
     float: left;
     clear: none;
     text-align: left;
     position: relative;
 }
-ul#nav ul {
+div#secondnavbar ul.nav ul {
     background: transparent;
     list-style: none;
     position: absolute;
     left: -9999px;
     /* display:none por vezes nao funcionava bem */
-    z-index: 100;
+    z-index: 10000;
 }
-ul#nav ul li {
+div#secondnavbar ul.nav ul li {
     width: 100%;
     float: none;
 }
-ul#nav ul a {
+div#secondnavbar ul.nav ul a {
     white-space: nowrap;
 }
-ul#nav li:hover ul {
+div#secondnavbar ul.nav li:hover ul {
     left: 0;
 }
 /* aparencia do item de menu  */
 
-ul#nav a {
+div#secondnavbar ul.nav a {
     padding: 10px;
     font-size: 14px;
     display: block;
-    font-weight: normal;
     color: white;
     background: transparent;
     text-decoration: none;
     z-index: 0;
     font-weight: bold;
 }
-ul#nav li:hover a {
+div#secondnavbar ul.nav li:hover a {
     z-index: 1;
     text-decoration: underline
 }
 /* aparencia do subitem de menu  */
 
-ul#nav li:hover ul li a,
-ul#nav li.active:hover ul li a {
+div#secondnavbar ul.nav li:hover ul li a,
+div#secondnavbar ul.nav li.active:hover ul li a {
     /*resets*/
     font-weight: normal;
     background: none;
@@ -530,10 +537,9 @@ ul#nav li.active:hover ul li a {
     border-width: 1px;
     border-color: gray gray #C2C2CC #69C;
     text-shadow: 0px 0px 2px #C2C2CC;
-    box-shadow: 0 0 0.4em #444;
 }
-ul#nav li.active:hover ul li a:hover,
-ul#nav li:hover ul li a:hover {
+div#secondnavbar ul.nav li.active:hover ul li a:hover,
+div#secondnavbar ul.nav li:hover ul li a:hover {
     text-shadow: none;
     background: #69C;
     color: white;
@@ -541,32 +547,16 @@ ul#nav li:hover ul li a:hover {
 /* search 
 -------------------------------------------------------*/
 
-div#searchholder {
+div#loginholder {
     z-index: 10;
     position: relative;
     float: right;
-    margin-top: 5px;
 }
-div#searchholder input[type=text] {
+div.loginholder img{
+    padding-top: 0px;
+    padding-bottom: 4px;
+    margin-left: 5px;
     height: 20px;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-div#searchholder input[type=text]:focus {
-    outline-color: transparent;
-    border-color: #9CF;
-}
-div#searchholder button[type=submit] {
-    vertical-align: top;
-    border: none;
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    background-image: url(../scm-imagens/system/search.png);
-    cursor: pointer;
-}
-div#searchholder button[type=submit]:hover {
-    box-shadow: 0 0 2px #69F inset;
 }
 /* Middle 
 ##########################################################################################################################################################*/

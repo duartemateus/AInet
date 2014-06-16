@@ -2,7 +2,7 @@
 
 <div id="secondnavbar" class="">
     <div class="navbar wrapper">
-        <ul id="nav">
+        <ul class="nav">
             <?php $str='' ;
                 switch ($secondnavbar[0]){ 
                     case 0:
@@ -31,11 +31,26 @@
                 echo $str;
             ?>
         </ul>
-        <div id="searchholder">
-            <form class="navbar-search" action="">
-                <input class="search-box" type="text" placeholder="Procurar" name="search" />
-                <button class="search-button" type="submit"></button>
-            </form>
+        <div id="loginholder">
+            <div class="loginholder cf">
+                <ul class="nav cf">
+                    <li>
+                        <a id="show-login" href="#">
+                            <p>Área Reservada</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+</div>
+<div id="login-form" title="Área Reservada">
+    <form>
+        <fieldset>
+            <label for="login_email">Email do Utilizador</label>
+            <input type="text" name="login_email" id="login_email" value="" class="text ui-widget-content ui-corner-all">
+            <label for="login_password">Palavra-Chave</label>
+            <input type="password" name="login_password" id="login_password" value="" class="text ui-widget-content ui-corner-all">
+        </fieldset>
+    </form>
 </div>
