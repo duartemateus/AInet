@@ -63,7 +63,7 @@ if ($num_rows > 0) {
 } 
 else {
     echo "yousuck1";
-$SQL = "INSERT INTO `person`(`id`, `name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`, `member_nr`, `patient_nr`) VALUES ('2','Crl','','gay','ali','aqui','12313','crap','marc4@gaymail.com','dsad','dsad','asda','dasd','asdad','asdas','adsa')";
+$SQL = "INSERT INTO `person`(`id`, `name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`, `member_nr`, `patient_nr`) VALUES ('2','farto','','desta','merda','123','12313','crap','marc4@gaymail.com','dsad','dsad','asda','dasd','asdad','asdas','adsa')";
     
 $SQL1 = "INSERT INTO `scml_user`(`id`, `email`,`hashed_password` , `salt`, `role`, `photo`, `photo_url`, `photo_mimetype`, `last_successful_login`, `invalid_login_attempts`, `active`, `created_at`, `updated_at`, `person_id`, `remember_token`) VALUES ('2','crap@gamladsad.pt','$pword','10','1','1','1','1','1','1','0','1','1','2','1')";
 $result = mysql_query($SQL);
