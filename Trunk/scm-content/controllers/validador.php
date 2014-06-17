@@ -1,5 +1,5 @@
 <?php
-#extract ($_POST);
+extract ($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = testar_input($_POST["first"]);
   $email = testar_input($_POST["email"]);
