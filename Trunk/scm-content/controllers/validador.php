@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    echo $stuff.'<br>';
 //    testar_input($stuff);
 //}
-echo $name;
 
 function testar_input($data) {
   $data = trim($data);

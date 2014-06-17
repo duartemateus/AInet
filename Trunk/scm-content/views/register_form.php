@@ -18,7 +18,7 @@
                                                 <tr>
                                                     <td class="left required">Nome Completo:</td>
                                                     <td>
-                                                        <input class="big_input" type="text" name="nome" />
+                                                        <input class="big_input" type="text" name="nome" pattern="[A-Za-z]{5,}" required/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -43,20 +43,20 @@
                                                                                                 <tr>
                                                     <td class="left">Nacionalidade:</td>
                                                     <td>
-                                                        <input type="text" name="nacionalidade" />
+                                                        <input type="text" name="nacionalidade" pattern="[A-Za-z]{5,}"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                 <tr>
                                                     <td class="left">Morada:</td>
                                                     <td>
-                                                        <input class="big_input" type="text" name="morada" />
+                                                        <input class="big_input" type="text" name="morada" pattern="[A-Za-z]{5,}"/>
                                                     </td>
                                                 </tr>
                                                                                                 <tr>
                                                     <td class="left">Codigo Postal:</td>
                                                     <td>
-                                                        <input type="text" name="postal" />
+                                                        <input type="text" name="postal" pattern="[1-9]{4}\-[1-9]{3}"/><a>(1234-567)</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -68,24 +68,24 @@
                                                 <tr>
                                                     <td class="left">Email:</td>
                                                     <td>
-                                                        <input type="text" name="email" />
+                                                        <input type="text" name="email" pattern=".{6,80}" required/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left">Confirmar Email:</td>
                                                     <td>
-                                                        <input type="text" name="email1" />
+                                                        <input type="text" name="email1" pattern=".{6,80}" required/>
                                                     </td>
                                                 </tr>                                                                                                           <tr>
                                                     <td class="left">Password:</td>
                                                     <td>
-                                                        <input type="text" name="password" />
+                                                        <input type="password" name="password" pattern=".{6,24}" required/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left">Confirmar Password:</td>
                                                     <td>
-                                                        <input type="text" name="password1" />
+                                                        <input type="password" name="password1" pattern=".{6,24}" required/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -107,7 +107,7 @@
                                                         Telemóvel:
                                                     </td>
                                                     <td>
-                                                        <input type="number" name="telemovel" />
+                                                        <input type="text" name="telemovel" pattern="[9][0-9]{8}" />
                                                     </td>
                                                 </tr>
                                                 <tr>
