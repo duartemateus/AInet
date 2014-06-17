@@ -15,7 +15,7 @@ body {
     font-family: 'VegurLight', 'Myriad Pro', 'Orienta', Arial, Helvetica, Sans-Serif;
     position: relative;
     background-color: white;
-    background-image: url(../scm-imagens/pw_pattern_@2X.png);
+    background-image: url(../img/pw_pattern_@2X.png);
 }
 h1,
 h2, 
@@ -190,9 +190,21 @@ input.big_input[type="text"] {
 }
 input:not([type="reset"]):not([type="submit"]),
 textarea {
+    width: 100%;
     border-radius: 4px;
-    border: 1px silver inset;
+    border-top: 1px silver solid;
+    border-right: 1px silver solid;
+    border-bottom: 1px gray solid;
+    border-left: 1px gray solid;
     outline: none;
+    padding: 0.3em;
+}
+
+input:not([type="reset"]):not([type="submit"]):hover, 
+input:not([type="reset"]):not([type="submit"]):focus,
+textarea:hover,
+textarea:focus{
+    border: 1px solid #69C;
 }
 /* Classes Globais
 ##########################################################################################################################################################*/
@@ -754,7 +766,7 @@ div.content-row p {
 div.content-row img.portrait {
     width: 128px;
     height: 128px;
-    background: url(../scm-imagens/system/no_portrait.png) cover no-repeat;
+    background: url(../img/system/no_portrait.png) cover no-repeat;
     border: none;
     margin: none;
     outline: none;
@@ -780,7 +792,7 @@ div.content-other {
 div.content-other img {
     width: 128px;
     height: 128px;
-    background: url(../scm-imagens/system/no_portrait.png) cover no-repeat;
+    background: url(../img/system/no_portrait.png) cover no-repeat;
     border: none;
     margin: none;
     outline: none;
@@ -974,5 +986,5 @@ div.has_sidebar div#sidebar a.active p:after {
     border-bottom-right-radius: 17px;
     
     
-    /*border-color: transparent transparent transparent #D80;
+    /*border-color: transparent transparent transparent #D80;*/
 }
