@@ -8,8 +8,49 @@ $server = "127.0.0.1";
 
 $db_handle = mysql_connect($server, $user_name, $pass_word);
 $db_found = mysql_select_db($database, $db_handle);
-
 extract ($_POST);
+
+$mail = testar_input($email);
+$nome = testar_input($nome);
+$morada = testar_input($morada);
+$cidade = testar_input($cidade);
+$nacionalidade = testar_input($nacionalidade);
+$bi = testar_input($bi);
+$telemovel = testar_input($telemovel);
+$fixo = testar_input($fixo);
+$sns = testar_input($sns);
+$password = testar_input($password);
+$contribuinte =testar_input($contribuinte);
+$datanascimento = testar_input($datanascimento);
+$postal = testar_input($posta);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+    if (count($_POST["nome"]) < 5) {
+    $nameErr = "Tem de conter pelo menos 5 caracteres.";
+  } else {
+    $name = test_input($_POST["name"]);
+  }
+
+    if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email)){
+    $emailErr = "Email necessario";
+  } elseif($email != $email1){
+      $emailErr = "Os emails não são iguais";
+  }else{
+      $email = test_input($_POST["email"]);
+  }
+
+    if (empty($_POST["password"])) {
+    $emailErr = "Password necessaria";
+  } elseif($password != $password1){
+      $emailErr = "As passwords não são iguais";
+  }else{
+      $email = test_input($_POST["password"]);
+  }
+}
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
