@@ -1,6 +1,6 @@
 <div id="middle" class="wrapper united">
     <div id="container" class="has_borders">
-        <div class="content-row cf has_b_shadow">
+        <div class="content-row cf">
             <div class="slider-wrapper presentation">
                 <a href="#" class="slider-content-previous">
                     <span>Anterior</span>

@@ -16,7 +16,6 @@
         <script type='text/javascript' src='<?php echo JS_DIR . "jquery.cycle.all.js"; ?>'></script>
         <script type='text/javascript' src='<?php echo JS_DIR . "jquery.easing.1.3.js"; ?>'></script>
         <script type='text/javascript' src='<?php echo JS_DIR . "slider.js"; ?>'></script> 
-        <script type='text/javascript' src='<?php echo JS_DIR . "sticky-secondbar"; ?>'></script>
         <style>
             #login-dialog .ui-state-error {
                 padding: .3em;
@@ -32,11 +31,17 @@
                 $('a[href="#"]').click(function(event) {
                     event.preventDefault();
                 });
+                $('#sidebar.saude_areas a').click(function(e) {
+                    var allElems = $('#sidebar').children();
+                    for (var i = 0; i < allElems.length; i++) {
+                        allElems[i].className = '';
+                    }
+                    var id = $(this).attr('href');
+                    document.getElementById('input_selected_area').value = id;
+                    document.forms['form_select_area'].submit();
+                    e.preventDefault();
+                });
             });
-        </script>
-        <script type='text/javascript'>
-
-
             $(function() {
                 var email = $("#login_email"),
                         password = $("#login_password"),
@@ -138,7 +143,7 @@
                 <div class="wrapper">
                     <div id="imagesholder">
                         <!-- 2 divs por imagem -->
-                        <a <?php echo $firstnavbar == 1 ? 'class="active" ' : ''; ?>href="saude_areas">
+                        <a <?php echo $firstnavbar == 1 ? 'class="active" ' : ''; ?>href="saude_areas.php">
                             <div class="imageholder">
                                 <div>
                                     <h1>Saúde</h1>
@@ -173,20 +178,29 @@
                                 </div>
                             </div>
                         </a>
-                        <a <?php echo $firstnavbar == 6 ? 'class="active" ' : ''; ?>href="areapessoal.php">
-                            <div class="imageholder">
-                                <div>
-                                    <h1>Área Pessoal</h1>
+
+                        <?php
+                        if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
+                            echo "  
+                            <a " . ($firstnavbar == 6 ? 'class=\"active\"' : "") . "href='areapessoal.php'>
+                                <div class='imageholder'>
+                                    <div>
+                                        <h1>Área Pessoal</h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a <?php echo $firstnavbar == 7 ? 'class="active" ' : ''; ?>href="admin.php">
-                            <div class="imageholder">
-                                <div>
-                                    <h1>Administração</h1>
-                                </div>
-                            </div>
-                        </a>
+                            </a>";
+                            if ($_SESSION['user_role'] < 3) {
+                                echo "  
+                                <a " . ($firstnavbar == 7 ? 'class=\"active\"' : "") . "href='admin.php'>
+                                    <div class='imageholder'>
+                                        <div>
+                                            <h1>Administração</h1>
+                                        </div>
+                                    </div>
+                                </a>";
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -207,7 +221,7 @@
                             <a href='saude_areas.php'>Áreas Clínicas</a>\n
                         </li>\n
                         <li" . ($secondnavbar == 2 ? " class='active'" : "") . ">\n
-                            <a href='../saude/equipa-clinica.php'>Equipa Clínica</a>\n
+                            <a href='saude_equipa.php'>Equipa Clínica</a>\n
                         </li>\n
                         <li" . ($secondnavbar == 3 ? " class='active'" : "") . ">\n
                             <a href='saude_marcacao.php'>Marcação de Consulta</a>\n

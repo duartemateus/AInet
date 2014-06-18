@@ -8,9 +8,7 @@ $(function () {
                 'position': 'fixed',
                 'top': 0,
                 'left': 0,
-                'min-width': '1000px',
-                'opacity': 0.9,
-                'width': '100%'
+                'opacity': 0.9
             });
             $('#top').css({
                 'z-index': '1000',
@@ -19,9 +17,7 @@ $(function () {
         } else {
             $('#secondnavbar').css({
                 'position': 'relative',
-                'min-width': '1000px',
-                'opacity': 1,
-                'width': '100%'
+                'opacity': 1
             });
             $('#top').css({
                 'z-index': '10',

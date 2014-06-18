@@ -22,20 +22,19 @@
 
                                 <div class="content-row">
                                     <div class="content-left">
-                                        <p>Rua Trindade Coelho, 8,</p>
+                                        <p class="address">Rua Trindade Coelho, 8,</p>
                                         <p>Apartado 1109, 2401-801 Leiria</p>
                                     </div>
 
                                     <div class="content-right">
-                                        <p>
+                                        <p class="phone">
                                             244 106 202
                                         </p>
-                                        <p>
+                                        <p class="fax">
                                             244 106 298
                                         </p>
-                                        <p>
-                                            geral@misericordiadeleiria.pt
-                                        </p>
+                                        <p class="email">
+                                            <a href="mailto:geral@misericordiadeleiria.pt" target="_top">geral@misericordiadeleiria.pt</a>
 
                                     </div>
                                 </div>
