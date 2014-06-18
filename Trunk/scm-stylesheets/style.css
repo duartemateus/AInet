@@ -663,12 +663,20 @@ div.content-right {
     clear: none;
     width: 40%;
 }
+div.content-right.left_border {
+    width: 39%;
+}
 div.content-right.perfil {
     position: relative;
     text-align: left;
     float: right;
     clear: none;
     width: 69%;
+}
+
+div.content-left.right_border {
+    border-right: 1px solid silver;
+
 }
 div.content-half {
     position: relative;
@@ -706,6 +714,11 @@ div.content a p {
     text-align: center;
     padding-bottom: 0em;
     color: #69C;
+}
+div.content a.news p{
+    text-align: left;
+    color: darkgray;
+    font-size: 13px;
 }
 div.content a:hover p {
     color: #C60;
@@ -763,12 +776,51 @@ div.content-row p {
     font-size: 14px;
     line-height: 1.2;
 }
+div.content-row input{
+    width: 200px;
+    margin-top: 10px;
+}
+div.content-row select{
+    width: 200px;
+    margin-top: 10px;
+    padding: 3px;
+    outline: none;
+    cursor:pointer;
+    background-color: white;
+}
+div.content-row p.search_opt {
+    position: relative;
+    font-size: 15px !important;
+    text-align: left !important;
+    margin-left: 18px !important;
+    line-height: 1;
+}
+div.content-row p.search_opt:after {
+    content: '';
+    position: absolute;
+    left: -18px;
+    bottom:0;
+    height: 14px;
+    width: 14px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../scm-imagens/seta.png);
+}
+div.content-row p.search {
+    color: #898989;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+}
 div.content-row img.portrait {
     width: 128px;
     height: 128px;
-    background: url(../img/system/no_portrait.png) cover no-repeat;
-    border: none;
-    margin: none;
+    background-image: url(../scm-imagens/system/no_portrait.jpg);
+    background-repeat: no-repeat;
+    border-width: 0;
+    border-image-width: 0 !important;
+    margin: 0;
     outline: none;
 }
 div.content-text {
@@ -789,19 +841,67 @@ div.content-other {
     border-radius: 8px;
     box-shadow: 0 0 2px gray;
 }
+div.content-other.filter{
+    width: 300px;
+}
+div.content-other hr {
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+div.content-other p {
+    text-align: left;
+}
+div.content-other,
+div.content-other *{
+    text-indent: 0 !important;
+}
+div.content-other a.name p{
+    font-size:18px;
+    color: #D80;
+    text-align: left;
+}
+div.content-other div.content {
+    padding: 1em 1em;
+}
+
 div.content-other img {
+    float:right;
     width: 128px;
     height: 128px;
-    background: url(../img/system/no_portrait.png) cover no-repeat;
-    border: none;
-    margin: none;
-    outline: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    border-radius: 0.2em 0.5em 0.2em 0.2em;
+}
+div.content-other div.marcar_consulta {
+    position:relative;
+}
+div.content-other div.marcar_consulta a{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+div.content-other div.marcar_consulta a p {
+    width: 126px;
+    border: 1px solid transparent;
+    box-shadow:0 0 5px lightgrey;
+    border-radius: 0.2em; 
+    border-bottom-right-radius: 0.5em;
+    background-color: transparent;
+    padding: 0.4em 0em;
+}
+div.content-other div.marcar_consulta a:hover p {
+    background-color: rgba(155, 155, 155, 0.25);
 }
 
 .divider {
     float: left;
     width: 1px;
-    height: 128px;
+    min-height: 128px;
+    height: 100%;
     background-color: #999;
     margin-left: 1%;
 }
@@ -818,6 +918,10 @@ div.content-other img {
 }
 #painel .content-left {
     width: 20%;
+}
+#painel .content-right {
+    width: 80%;
+    text-align: left;
 }
 #painel .content-right {
     width: 80%;
@@ -843,6 +947,40 @@ div.content-other img {
     font-size: 10px;
     box-shadow: 0px 0px 2px gray;
 }
+
+/* Autocomplete - Pesquisar
+-----------------------------------------------------------------------------*/
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 5px;
+	padding: 5px 0;
+	width: 200px;
+}
+.tt-suggestion {
+	font-size: 20px;
+	line-height: 20px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+        background-color: rgba(9, 118, 221, 0.5);
+        box-shadow:0 0 10px white inset;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
 /* Bot 
 ##########################################################################################################################################################*/
 
@@ -984,7 +1122,7 @@ div.has_sidebar div#sidebar a.active p:after {
     background-color: #D80;
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
-    
-    
+
+
     /*border-color: transparent transparent transparent #D80;*/
 }
