@@ -11,6 +11,15 @@ class controller_Creche{
     }
     
     public function get_view(&$vars){
+        $db = new model_DB();
+        $query= "SELECT * FROM publication WHERE type = 8";
+        $result = $db->conn->query($query);
+        $news = array();
+        while($r = mysqli_fetch_array($result)){
+            $news[$r['id']] = $r;
+        }
+        $vars['news'] = $news;
+        
         return VIEW_DIR.'creche/creche.php';
     }
 }

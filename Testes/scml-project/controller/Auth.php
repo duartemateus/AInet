@@ -8,11 +8,10 @@ class controller_Auth {
     const USER_ROLE = 'user_role';
 
     public function _construct() {
-        session_start();
     }
 
     public function isAuthenticated() {
-        return isset($_SESSION[self::AUTHENTICATED]) && $_SESSION[self::AUTHENTICATED] == true;
+        return isset($_SESSION[self::AUTHENTICATED]);
     }
 
     public function authenticate($email, $password) {
@@ -26,7 +25,7 @@ class controller_Auth {
         }
         $stmt->bind_param('s', $email);
         if ($stmt->execute()) {
-            $stmt->bind_result($userID, $hashedPass,$userRole);
+            $stmt->bind_result($userID, $hashedPass, $userRole);
             if ($stmt->fetch()) {
                 if (password_verify($password, $hashedPass)) {
                     $_SESSION[self::AUTHENTICATED] = true;
@@ -38,6 +37,7 @@ class controller_Auth {
             $stmt->free_result();
         }
     }
+
 
     public function logOut() {
         $_SESSION = array();

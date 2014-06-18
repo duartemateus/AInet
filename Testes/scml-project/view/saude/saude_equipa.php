@@ -83,9 +83,9 @@
                                 echo "</div>\n";
                                 echo "</div>\n";
                                 echo "</div>\n";
-                                echo "  </div> \n
-                                            </div> \n
-                                            </div> \n";
+                                echo " </div> \n
+                                    </div> \n
+                                    </div> \n";
                             }
                             ?>
                         </div>

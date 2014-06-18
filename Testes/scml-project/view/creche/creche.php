@@ -57,17 +57,17 @@
                                             $date = $type . " - " . $day . "/" . $month . "/" . $year;
 
                                             echo "\n
-                                <div class='slider-item'>\n
-                                    <div class='item-content'>\n
-                                        <h4>\n
-                                            <a href='#'>" . $new['title'] . "</a>\n
-                                        </h4>\n
-                                        <p>" . $new['abstract'] . "</p>\n
-                                        <p style='position:absolute!important;bottom:10px;right:10px'>
-                                            " . $date .
-                                            "</p>
-                                    </div>\n
-                                </div>\n";
+                                            <div class='slider-item'>\n
+                                                <div class='item-content'>\n
+                                                    <h4>\n
+                                                        <a href='#'>" . $new['title'] . "</a>\n
+                                                    </h4>\n
+                                                    <p>" . $new['abstract'] . "</p>\n
+                                                    <p style='position:absolute!important;bottom:10px;right:10px'>
+                                                        " . $date .
+                                                        "</p>
+                                                </div>\n
+                                            </div>\n";
                                         }
                                         ?>
                                     </div>
