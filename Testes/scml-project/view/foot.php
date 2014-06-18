@@ -6,7 +6,7 @@
                     <div class="content-row">
                         <div class="content">
                             <a href="../home/index.html">
-                                <img src='<?php echo IMG_DIR."scml_white.png" ?>'alt="">
+                                <img src='<?php echo IMG_DIR . "scml_white.png" ?>'alt="">
                             </a>
                         </div>
                     </div>
@@ -16,17 +16,29 @@
                         <div class="content">
                             <address>
                                 <p>
-                                    <strong>SCM Leiria</strong>
+                                    <strong>Santa Casa da Misericórdia de Leiria</strong>
                                 </p>
                                 <hr>
-                                <p>Rua Trindade Coelho, 8,</p>
-                                <p>Apartado 1109, 2401-801 Leiria</p>
-                                <p>
-                                    <strong>Tel.</strong>244 106 202</p>
-                                <p>
-                                    <strong>Fax</strong>244 106 298</p>
-                                <p>
-                                    <strong>Email</strong>geral@misericordiadeleiria.pt</p>
+
+                                <div class="content-row">
+                                    <div class="content-left">
+                                        <p>Rua Trindade Coelho, 8,</p>
+                                        <p>Apartado 1109, 2401-801 Leiria</p>
+                                    </div>
+
+                                    <div class="content-right">
+                                        <p>
+                                            244 106 202
+                                        </p>
+                                        <p>
+                                            244 106 298
+                                        </p>
+                                        <p>
+                                            geral@misericordiadeleiria.pt
+                                        </p>
+
+                                    </div>
+                                </div>
                             </address>
                         </div>
                     </div>

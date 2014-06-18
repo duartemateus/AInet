@@ -54,34 +54,50 @@
         <br/>
         <div class="content-row cf">
             <div class="content-left">
-                <div class="slider-wrapper publication has_borders">
-                    <a href="#" class="slider-content-previous">
-                        <span>Anterior</span>
-                    </a>
-                    <a href="#" class="slider-content-next">
-                        <span>Próximo</span>
-                    </a>
-                    <div class="slider-content">
-                        <div class='item-content'></div>
-                    </div>
+                <fieldset class="news title">
+                    <legend>
+                        <span>Ultimas Noticias</span>
+                    </legend>
+                    <br/>
+                    <div class="slider-wrapper publication has_borders">
+                        <a href="#" class="slider-content-previous">
+                            <span>Anterior</span>
+                        </a>
+                        <a href="#" class="slider-content-next">
+                            <span>Próximo</span>
+                        </a>
+                        <div class="slider-content">
+                            <div class='item-content'></div>
+                        </div>
 
-                    <div class="slider publication">
-                        <?php
-                        foreach ($vars['news'] as $pub) {
-                            echo "\n
+                        <div class="slider publication">
+                            <?php
+                            foreach ($vars['news'] as $new) {
+                                $type = $vars['news_types'][$new['type']];
+                                $timestamp = strtotime($new['date']);
+                                $day = date("d", $timestamp);
+                                $month = date("M", $timestamp);
+                                $year = date("Y", $timestamp);
+                                $date = $type . " - " . $day . "/" . $month . "/" . $year;
+
+                                echo "\n
                                 <div class='slider-item'>\n
                                     <div class='item-content'>\n
                                         <h4>\n
-                                            <a href='#'>" . $pub['title'] . "</a>\n
+                                            <a href='#'>" . $new['title'] . "</a>\n
                                         </h4>\n
-                                        <p>" . $pub['abstract'] . "</p>\n
-                                        <p>Posted: " . $pub['date'] . "</p>
+                                        <p>" . $new['abstract'] . "</p>\n
+                                        <p style='position:absolute!important;bottom:10px;right:10px'>
+                                            " . $date .
+                                "</p>
                                     </div>\n
                                 </div>\n";
-                        }
-                        ?>
+                            }
+                            ?>
+                        </div>
                     </div>
-                </div>
+                </fieldset> 
+
                 <hr>
                 <fieldset class="news title">
                     <legend>
@@ -90,15 +106,20 @@
 
                     <?php
                     foreach ($vars['publications'] as $pub) {
-                        echo "<div class='content-row cf'>\n
-                                <div class='dateholder'>\n
-                                    <p>12</p><hr/><p>asd</p>\n
-                                </div>\n
-                                <div class='info'>\n
-                                    <p class='title'>".$pub['title']."</p>\n
-                                    <a href='#'><p class='new' >coisas</p></a>\n
-                                </div>\n
-                            </div>\n";
+                        $timestamp = strtotime($pub['date']);
+                        $day = date("d", $timestamp);
+                        $month = date("M", $timestamp);
+
+                        echo "
+                        <div class='content-row cf'>\n
+                            <div class='dateholder'>\n
+                                <p>" . $day . "</p><hr/><p>" . $month . "</p>\n
+                            </div>\n
+                            <div class='info'>\n
+                               <p class='title'><a href='#'>" . $pub['title'] . "</a></p>\n
+                               <p class='author'>Publicado por:  <a href='#'>" . $pub['name'] . "</a></p>\n
+                            </div>\n
+                        </div>\n";
                     }
                     ?>
                 </fieldset> 

@@ -59,6 +59,10 @@ fieldset {
 fieldset legend * {
     padding-left: 16px;
 }
+fieldset a {
+    text-decoration: none;
+}
+
 fieldset.title legend {
     position: relative;
     font-size: 14px;
@@ -201,18 +205,42 @@ fieldset.news .dateholder p {
     font-weight: bolder;
 }
 fieldset.news .info {
+    position: relative;
     display: block;
     height: 60px;
     float:left;
     text-align: center;
 }
-fieldset.news .info p {
-    margin-left: 10px; 
+fieldset.news .info a {
     text-decoration: none;
 }
-fieldset.news .info p.title {
+fieldset.news .info p {
+    margin-left: 10px; 
+}
+fieldset.news .info p.title{
+    margin-top: 5px;
+} 
+fieldset.news .info p.title a{
     font-weight: bold;
     font-size: 18px;
+    color:#333;
+}
+fieldset.news .info p.title a:hover{
+    color:black;
+}
+fieldset.news .info p.author {
+    position: absolute;
+    bottom:5px;
+    left: 0;
+    color:gray;
+}
+fieldset.news .info p.author a{
+    color:gray;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+fieldset.news .info p.author a:hover{
+    color:black;
 }
 
 
@@ -278,8 +306,6 @@ textarea:focus{
     background: linear-gradient(to right, #d4d4d4, silver, #d4d4d4);
     /* Standard syntax (must be last) */
     color: #000;
-    box-shadow: 0 0 4px white inset;
-    padding: 0.2em 0;
 }
 /* wrapper 
 -----------------------------------------------------------------------------*/
@@ -690,23 +716,21 @@ div.content-left {
     text-align: left;
     float: left;
     clear: none;
-    width: 58%;
-    border-right: 20px solid transparent; 
+    width: 59%;
 }
 div.content-left.perfil {
     position: relative;
     text-align: right;
     float: left;
     clear: none;
-    width: 27%;
-    border-left: 20px solid transparent; 
+    width: 29%;
 }
 div.content-right {
     position: relative;
     text-align: right;
     float: right;
     clear: none;
-    width: 40%;
+    width: 39%;
 }
 div.content-right.perfil {
     position: relative;
@@ -903,20 +927,10 @@ div.content-other img {
 
 div#thirdnavbar {
     width: 100%;
-    text-align: center;
-    margin: auto;
-    display: inline-block;
-    box-shadow: 0 2px 5px gray;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid silver;
-}
-div#thirdnavbar div.navbar {
-    text-align: center;
+    text-align: left;
 }
 div.subnavbar {
     vertical-align: top;
-    text-align: left;
-    max-width: 30%;
     display: inline-block;
 }
 div.subnavbar a {
@@ -933,8 +947,8 @@ div.subnavbar a:hover p:before {}
 -----------------------------------------------------------------------------*/
 
 div#credits {
-    padding-top: 0.5em;
-    padding-bottom: 0em;
+    margin: 0;
+    padding: 0;
     color: #111;
 }
 div#credits *{

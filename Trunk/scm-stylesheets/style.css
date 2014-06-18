@@ -5,7 +5,7 @@
 /*  #C60 #D80 #EA0 */
 
 /*      BLUES:      
-/*  #468 #58A #3C5A80 #69C #9CF #CAE5FF  rgb(102, 153, 204)*/
+/*  #468 #58A #3C5A80 #69C #9CF #CAE5FF */
 
 /*      GREYS       
 /*  #CBCBCB #DCDCDC #EDEDED */
@@ -106,6 +106,10 @@ fieldset {
 fieldset legend * {
     padding-left: 16px;
 }
+fieldset a {
+    text-decoration: none;
+}
+
 fieldset.title legend {
     position: relative;
     font-size: 14px;
@@ -212,10 +216,81 @@ fieldset.banner div{
     margin-right: 12px;
     padding: 10px;
 }
+fieldset.banner div a:hover h4{
+    color:#69C !important;
+}
 fieldset.banner div fieldset.banner div{
     border-left:12px solid transparent !important;
     border-right:12px solid transparent !important;
 }
+fieldset.news div{
+    display: inline-block;
+}
+fieldset.news .content-row{
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 5px;
+    
+}
+fieldset.news .dateholder {
+    display: block;
+    width: 60px;
+    height: 60px;
+    float:left;
+    background-color: rgba(102, 153, 204, 0.75);
+    box-shadow: 0px 0px 0px 1px #69C; 
+}
+fieldset.news .dateholder hr {
+    padding: 0;
+    margin: 0 10px;
+}
+fieldset.news .dateholder p {
+    font-size: 14px;
+    padding: 7px 0;
+    line-height: 1;
+    color:white;
+    font-weight: bolder;
+}
+fieldset.news .info {
+    position: relative;
+    display: block;
+    height: 60px;
+    float:left;
+    text-align: center;
+}
+fieldset.news .info a {
+    text-decoration: none;
+}
+fieldset.news .info p {
+    margin-left: 10px; 
+}
+fieldset.news .info p.title{
+    margin-top: 5px;
+} 
+fieldset.news .info p.title a{
+    font-weight: bold;
+    font-size: 18px;
+    color:#333;
+}
+fieldset.news .info p.title a:hover{
+    color:black;
+}
+fieldset.news .info p.author {
+    position: absolute;
+    bottom:5px;
+    left: 0;
+    color:gray;
+}
+fieldset.news .info p.author a{
+    color:gray;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+fieldset.news .info p.author a:hover{
+    color:black;
+}
+
+
 textarea {
     margin-left: 2px;
     resize: none;
@@ -238,12 +313,9 @@ input.big_input[type="text"] {
 input:not([type="reset"]):not([type="submit"]),
 textarea {
     width: 100%;
-    border-radius: 4px;
-    border-top: 1px silver solid;
-    border-right: 1px silver solid;
-    border-bottom: 1px gray solid;
-    border-left: 1px gray solid;
     outline: none;
+    border: 1px silver solid;
+    border-radius: 1px;
     padding: 0.3em;
 }
 
@@ -281,8 +353,6 @@ textarea:focus{
     background: linear-gradient(to right, #d4d4d4, silver, #d4d4d4);
     /* Standard syntax (must be last) */
     color: #000;
-    box-shadow: 0 0 4px white inset;
-    padding: 0.2em 0;
 }
 /* wrapper 
 -----------------------------------------------------------------------------*/
@@ -681,8 +751,7 @@ div.has_sidebar div#container {
 div#container {
     position: relative;
     width: 100%;
-    border-color: silver;
-    box-shadow: 0 -2px 5px gray;
+    border: transparent;
     background-color: white;
     padding-bottom: 20px;
 }
@@ -694,7 +763,7 @@ div.content-left {
     text-align: left;
     float: left;
     clear: none;
-    width: 60%;
+    width: 59%;
 }
 div.content-left.perfil {
     position: relative;
@@ -1043,20 +1112,10 @@ div.content-other div.marcar_consulta a:hover p {
 
 div#thirdnavbar {
     width: 100%;
-    text-align: center;
-    margin: auto;
-    display: inline-block;
-    box-shadow: 0 2px 5px gray;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid silver;
-}
-div#thirdnavbar div.navbar {
-    text-align: center;
+    text-align: left;
 }
 div.subnavbar {
     vertical-align: top;
-    text-align: left;
-    max-width: 30%;
     display: inline-block;
 }
 div.subnavbar a {
@@ -1073,8 +1132,8 @@ div.subnavbar a:hover p:before {}
 -----------------------------------------------------------------------------*/
 
 div#credits {
-    padding-top: 0.5em;
-    padding-bottom: 0em;
+    margin: 0;
+    padding: 0;
     color: #111;
 }
 div#credits *{
