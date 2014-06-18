@@ -31,8 +31,10 @@ class controller_SaudeAreas {
                                       WHERE (d.id = ds.doctor_id AND cs.id = ds.clinical_specialty_id AND d.user_id = p.id AND p.id = su.id)");
             
             $informacao_doutor = array();
+            $i = 0;
             while ($r = mysqli_fetch_array($result)) {
-                $informacao_doutor[$r['id']] = $r;
+                $informacao_doutor[$i] = $r;
+                $i = $i + 1;
             }
             $vars['informacao_doutor'] = $informacao_doutor;
         }

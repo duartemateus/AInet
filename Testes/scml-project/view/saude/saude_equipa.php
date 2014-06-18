@@ -11,14 +11,6 @@
                             <?php
                             $doctors = array();
                             foreach ($informacao_doutor as $row) {
-                                if (isset($doctors[$row['id']])) {
-                                    $doctors[$row['id']]['specialty_name'] = trim($doctors[$row['id']]['specialty_name'] . ", " . $row['specialty_name']);
-                                    $doctors[$row['id']]['availability'] = trim($doctors[$row['id']]['availability'] . ":" . $row['availability']);
-                                } else {
-                                    $doctors[$row['id']] = $row;
-                                }
-                            }
-                            foreach ($doctors as $row) {
                                 echo "  <div class='content-row cf'> \n
                                             <div class='content'> \n
                                             <div class='content-other cf' id='specialty'> \n

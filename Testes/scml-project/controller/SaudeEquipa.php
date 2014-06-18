@@ -14,7 +14,7 @@ class controller_SaudeEquipa {
         if (isset($_GET) && count($_GET)) {
             $vars['area'] = $_GET['area'];
         }
-        
+
         $vars['first_time'] = true;
         $db = new model_DB();
         if ($db->connected) {
@@ -34,7 +34,12 @@ class controller_SaudeEquipa {
             $result = mysqli_query($db->conn, $query);
             $informacao_doutor = array();
             while ($r = mysqli_fetch_array($result)) {
-                $informacao_doutor[$r['id']] = $r;
+                if (isset($informacao_doutor[$r['id']])) {
+                    $informacao_doutor[$r['id']]['specialty_name'] = trim($informacao_doutor[$r['id']]['specialty_name'] . ", " . $r['specialty_name']);
+                    $informacao_doutor[$r['id']]['availability'] = trim($informacao_doutor[$r['id']]['availability'] . ":" . $r['availability']);
+                } else {
+                    $informacao_doutor[$r['id']] = $r;
+                }
             }
             $vars['informacao_doutor'] = $informacao_doutor;
 
