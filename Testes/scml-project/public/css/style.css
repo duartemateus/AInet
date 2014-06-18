@@ -305,13 +305,24 @@ td.areatexto {
     vertical-align: top;
     text-align: right;
 }
-input.big_input[type="text"] {
-    margin-left: 2px;
+input:not([type="reset"]):not([type="submit"]) {
+    margin: 5px;
+    margin-left: 0px;
+}
+input.small:not([type="reset"]):not([type="submit"]) {
+    width: 200px;
+}
+input.medium:not([type="reset"]):not([type="submit"]) {
+    width: 300px;
+}
+input.big:not([type="reset"]):not([type="submit"]) {
     width: 400px;
+}
+input.fill:not([type="reset"]):not([type="submit"]) {
+    width: 100%;
 }
 input:not([type="reset"]):not([type="submit"]),
 textarea {
-    width: 100%;
     outline: none;
     border: 1px silver solid;
     border-radius: 1px;
@@ -891,10 +902,7 @@ div.content-row p {
     font-size: 14px;
     line-height: 1.2;
 }
-div.content-row input{
-    width: 200px;
-    margin-top: 10px;
-}
+
 div.content-row select{
     width: 200px;
     margin-top: 10px;
@@ -1042,9 +1050,7 @@ div.content-other div.marcar_consulta a:hover p {
     width: 80%;
     text-align: left;
 }
-#painel .content-right input {
-    width: 95%;
-}
+
 #painel .content-right textarea {
     width: 94%;
     height: 95%;

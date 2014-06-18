@@ -15,17 +15,6 @@ class controller_Auth {
         return isset($_SESSION[self::AUTHENTICATED]) && $_SESSION[self::AUTHENTICATED] == true;
     }
 
-    // To delete later
-    public function teste($password) {
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        echo $password;
-        if (password_verify('marco', $hash)) {
-            echo 'Password is valid!';
-        } else {
-            echo 'Invalid password.';
-        }
-    }
-
     public function authenticate($email, $password) {
         $db = new model_DB();
         if (!$db->connected) {

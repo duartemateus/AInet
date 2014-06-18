@@ -16,6 +16,7 @@
         <script type='text/javascript' src='<?php echo JS_DIR . "jquery.cycle.all.js"; ?>'></script>
         <script type='text/javascript' src='<?php echo JS_DIR . "jquery.easing.1.3.js"; ?>'></script>
         <script type='text/javascript' src='<?php echo JS_DIR . "slider.js"; ?>'></script> 
+        <script type='text/javascript' src='<?php echo JS_DIR . "typeahead.min.js"; ?>'></script> 
         <style>
             #login-dialog .ui-state-error {
                 padding: .3em;
@@ -40,6 +41,21 @@
                     document.getElementById('input_selected_area').value = id;
                     document.forms['form_select_area'].submit();
                     e.preventDefault();
+                });
+                $('input.typeahead').typeahead({
+                    name: 'accounts',
+                    local: [<?php
+if (isset($doctor_name)) {
+    foreach ($doctor_name as $row) {
+        if ($first_time) {
+            echo "'" . $row['doctor_name'] . "'";
+            $first_time = false;
+        } else {
+            echo ",'" . $row['doctor_name'] . "'";
+        }
+    }
+}
+?>]
                 });
             });
             $(function() {
@@ -93,14 +109,14 @@
 
                 dialog.dialog({
                     autoOpen: false,
-                    width: 320,
+                    width: 400,
                     modal: true,
                     buttons: {
                         "Cancelar": function() {
                             $(this).dialog("close");
                         },
-                        "Registar": function() {
-
+                        "Novo Utilizador": function() {
+                            window.location.href = "./pessoal_registar.php";
                         },
                         "Entrar": function() {
                             checkifValid();
@@ -123,7 +139,41 @@
                     logout.submit();
                 });
             });
-
+            function loadXMLDoc() {
+                $('.remove-typeahead').hide();
+                var specialty = $('#search_opt_speciality').value;
+                var id = 0;
+                var array =
+<?php
+$first = true;
+echo "{";
+if (isset($areas_clinicas)) {
+    foreach ($areas_clinicas as $row) {
+        if ($first) {
+            echo "'" . $row['short_name'] . "' : '" . $row['id'] . "'";
+            $first = false;
+        } else {
+            echo ",'" . $row['short_name'] . "' : '" . $row['id'] . "'";
+        }
+    }
+}
+echo "}";
+?>;
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("specialty").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "equipa_clinica.php?x=" + array[specialty], true);
+                xmlhttp.send();
+            }
 
         </script>
     </head>
