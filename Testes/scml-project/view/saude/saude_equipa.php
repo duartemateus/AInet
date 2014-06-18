@@ -19,7 +19,7 @@
                                             <div class='content-row'> \n
                                             <div class='content'> \n";
 
-                                echo "<a class='name' href='#'><p>" . $row['doctor_name'] . "</p></a>";
+                                echo "<a class='name' href='./saude_doutor.php?id=" . $row['id'] . "'><p>" . $row['doctor_name'] . ".</p></a>";
                                 echo "  <hr>";
                                 echo "  <address> \n";
 
@@ -100,8 +100,8 @@
                                             </div>
                                             <div class="content-row">
                                                 <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                                    <div class="content-row" style="display:inline-block">
-                                                        <input class="fill"  type="text" placeholder="Pesquisar por Nome..." name="search_opt_name" class="typeahead tt-query" autocomplete="off" spellcheck="false"/>
+                                                    <div class="content-row">
+                                                        <input type="text" placeholder="Pesquisar por Nome..." name="search_opt_name" class="typeahead tt-query" autocomplete="off" spellcheck="false"/>
                                                         <input class="hidden" type="submit"/>
                                                     </div>
                                                     <hr/>

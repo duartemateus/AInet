@@ -1,65 +1,118 @@
-<?php
+<div id="middle" class="wrapper">
+    <div>
+        <div id="container" class="cf has_borders">
+            <div class="content-row cf">
+                <div class="content-left perfil cf">
+                    <div class="content-row cf">
+                        <div class="content-row cf">
+                            <?php
+                            $doctor_image = null;
+                            if (!$informacao_doutor[$id_doutor]['photo'] == NULL) {
+                                $doctor_image = $informacao_doutor[$id_doutor]['photo'];
+                            } elseif (!$informacao_doutor[$id_doutor]['photo_url'] == NULL) {
+                                $doctor_image = $informacao_doutor[$id_doutor]['photo_url'];
+                            }
+                            echo "  <img class='perfil' src='$doctor_image' alt=''/>  ";
+                            ?>
+                        </div>
+                    </div>
+                </div>                
+                <div class="content-right perfil cf">
+                    <div class="content-row">
+                        <div class="content-other">
+                            <div class="content">
+                                <div class="content-row cf">
+                                    <p class='perfil'><?php echo $informacao_doutor[$id_doutor]['doctor_name'] ?></p>
+                                    <hr>
+                                    <div class="content-left half divider">
+                                        <div class="content-row cf">
+                                            <?php
+                                            echo "  <address> \n";
+                                            if (!$informacao_doutor[$id_doutor]['mobile_phone'] == NULL) {
+                                                echo "<p class='mphone'>" . $informacao_doutor[$id_doutor]['mobile_phone'] . "</p>";
+                                            } if (!$informacao_doutor[$id_doutor]['phone'] == NULL) {
+                                                echo "<p class='phone'>" . $informacao_doutor[$id_doutor]['phone'] . "</p>";
+                                            }
+                                            echo "<p class='email'>" . $informacao_doutor[$id_doutor]['email'] . "</p>";
+                                            echo "<p class='specialty'>" . $informacao_doutor[$id_doutor]['specialty_name'] . "</p>";
+                                            if ($informacao_doutor[$id_doutor]['research'] != NULL) {
+                                                echo "<p class='info'>" . strip_tags(str_replace("</li>", ",", $informacao_doutor[$id_doutor]['research']), '<br>') . "</p>";
+                                            }
+                                            echo "  </address> \n";
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="content-right half">
+                                        <div class="content-row cf">
+                                            <?php
+                                            echo "  <address> \n";
+                                            if ($informacao_doutor[$id_doutor]['research'] != NULL) {
+                                                echo "<p class='quote'>" . strip_tags(str_replace("</li>", ",", $informacao_doutor[$id_doutor]['profile']), '<br>') . "</p>";
+                                            } else {
+                                                echo "<p class='no_quote'> Sem Informação disponível... <br></p>";
+                                            }
+                                            echo "  </address> \n";
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-row cf">
 
-require_once 'controllers/commons.php';
-require_once 'login.php';
-// vars
-$title = "Santa Casa da Misericórdia de Leiria";
-$keywords = "";
-$description = "";
-$body_onload = "";
-$firstnavbar = 1;
-$secondnavbar = array($firstnavbar, 2);
-$area = 0;
-// end
+                <br/>
+                <hr/>
+                <br/>
 
-if (isset($_GET) && count($_GET)) {
-    $area = $_GET['area'];
-}
-$db = new models_DBConnection();
-if ($db->connected) {
-    $areas_clinicas = mysqli_query($db->conn, "SELECT * FROM clinical_specialty ORDER BY short_name");
-    $informacao_doutor = mysqli_query($db->conn, "SELECT d.id, d.name AS doctor_name, d.research, d.profile, cs.short_name AS specialty_name, ds.availability, ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email, su.photo
-FROM doctor d, doctor_specialty ds, clinical_specialty cs, person p, scml_user su
-WHERE (
-d.id = ds.doctor_id
-AND cs.id = ds.clinical_specialty_id
-AND d.user_id = p.id
-AND p.id = su.id
-)
-order by doctor_name");
-    $doctor_name = mysqli_query($db->conn, "SELECT DISTINCT doctor_name FROM doctor_information");
-} else {
-    $areas_clinicas = "";
-}
-$first_time = true;
+                <div class="content-left cf">
+                    <div class="content-row cf">
+                        <fieldset class="news title">
+                            <legend>
+                                <span>Ultimas Publicações</span>
+                            </legend>
 
-// LOAD VIEWS
-include_once VIEWS_DIR . 'header_open.php';
-// INICIO todos os includes e scripts particulares da pagina
-// echo "<link rel='stylesheet' href='".STYLES_DIR."slider.css' type='text/css'/>\n";     
-// echo "<script type='text/javascript' src='".INCLUDES_DIR."jquery.cycle.all.js'></script>\n";
-// echo "<script type='text/javascript' src='".INCLUDES_DIR."jquery.easing.1.3.js'></script>"; 
-// echo "<script type='text/javascript' src='".JS_DIR."slider.js'></script>\n";
-echo "<script type='text/javascript'>\n";
-echo "    $(document).ready(function() {\n";
-echo "        $('#sidebar a').click(function(e) {\n";
-echo "            var allElems = $('#sidebar').children();\n";
-echo "            for (var i = 0; i < allElems.length; i++) {\n";
-echo "                allElems[i].className = '';\n";
-echo "            }\n";
-echo "            var id = $(this).attr('href');\n";
-echo "            document.getElementById('input_selected_area').value = id;\n";
-echo "            document.forms['form_select_area'].submit();\n";
-echo "            e.preventDefault();\n";
-echo "        });\n";
-echo "    });\n";
-echo "</script>\n";
-// END 
-include_once VIEWS_DIR . 'header_close.php';
-include_once VIEWS_DIR . 'top.php';
+                            <?php
+                            foreach ($vars['publications'] as $pub) {
+                                $timestamp = strtotime($pub['date']);
+                                $day = date("d", $timestamp);
+                                $month = date("M", $timestamp);
 
-$my_area_clinica = "";
-include_once VIEWS_DIR . 'saude/equipa_clinica.php';
-
-
-include_once VIEWS_DIR . 'footer.php';
+                                echo "
+                        <div class='content-row cf'>\n
+                            <div class='dateholder'>\n
+                                <p>" . $day . "</p><hr/><p>" . $month . "</p>\n
+                            </div>\n
+                            <div class='info'>\n
+                               <p class='title'><a href='#'>" . $pub['title'] . "</a></p>\n
+                               <p class='author'>Publicado por:  <a href='#'>" . $pub['name'] . "</a></p>\n
+                            </div>\n
+                        </div>\n";
+                            }
+                            ?>
+                        </fieldset> 
+                    </div>
+                </div>
+                <div class="content-right cf">
+                    <div class="content-row cf">
+                        <div class="content-other filter info">
+                            <div class="content-row cf">
+                                <div class="content">
+                                    <p class="search"> Horário Atendimento </p>
+                                    <hr/>
+                                </div>
+                            </div>
+                            <div class="content-row cf">
+                                <div class="content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -55,6 +55,9 @@ address p{
     text-align: left !important;
     margin-left: 18px;
 }
+address p.no_quote{
+    color: darkgray !important;
+}
 address p:after{
     content: '';
     position: absolute;
@@ -92,6 +95,12 @@ address p.clock:after{
 }
 address p.seta:after{
     background-image: url(../img/seta.png);
+}
+address p.quote:after{
+    background-image: url(../img/quote.png);
+}
+address p.no_quote:after{
+    background-image: url(../img/quote.png);
 }
 address p.seta{
     margin-left: 30px;
@@ -229,7 +238,7 @@ fieldset.news .content-row{
     width: 100%;
     border: 1px solid gray;
     margin-top: 5px;
-    
+
 }
 fieldset.news .dateholder {
     display: block;
@@ -775,12 +784,19 @@ div.content-left {
     clear: none;
     width: 59%;
 }
+div.content-left.half {
+    width: 50%;
+}
+div.content-left.half.divider {
+    width: 49%;
+    border-right: 1px solid silver;
+}
 div.content-left.perfil {
     position: relative;
     text-align: right;
     float: left;
     clear: none;
-    width: 29%;
+    width: 25%;
 }
 div.content-right {
     position: relative;
@@ -788,6 +804,9 @@ div.content-right {
     float: right;
     clear: none;
     width: 40%;
+}
+div.content-right.half {
+    width: 50%;
 }
 div.content-right.left_border {
     width: 39%;
@@ -797,7 +816,7 @@ div.content-right.perfil {
     text-align: left;
     float: right;
     clear: none;
-    width: 69%;
+    width: 74%;
 }
 
 div.content-left.right_border {
@@ -893,7 +912,7 @@ div.content a.appointment:hover p {
 }
 div.content-row {
     position: relative;
-    text-align: center;
+    text-align: left;
     width: 100%;
     min-height: 46px;
 }
@@ -902,7 +921,16 @@ div.content-row p {
     font-size: 14px;
     line-height: 1.2;
 }
-
+div.content-row p.perfil {
+    color: #626262;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+div.content-row input{
+    width: 200px;
+    margin-top: 10px;
+}
 div.content-row select{
     width: 200px;
     margin-top: 10px;
@@ -935,16 +963,27 @@ div.content-row p.search {
     font-size: 16px;
     line-height: 1.2;
     text-align: center;
+    font-weight: bold;
+    
 }
-div.content-row img.portrait {
-    width: 128px;
-    height: 128px;
+div.content-row img {
     background-image: url(../img/system/no_portrait.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     border-width: 0;
     border-image-width: 0 !important;
     margin: 0;
     outline: none;
+}
+div.content-row img.portrait {
+    width: 128px;
+    height: 128px;
+}
+div.content-row img.perfil {
+    width: 220px;
+    height: 220px;
+    border-radius: 0.3em;
+    box-shadow: 0 0 9px gray;
 }
 div.content-text {
     text-align: left;
@@ -966,6 +1005,10 @@ div.content-other {
 }
 div.content-other.filter{
     width: 300px;
+}
+div.content-other.filter.info{
+    float: right;
+    width: 90%;
 }
 div.content-other hr {
     margin-bottom: 8px;
@@ -1019,15 +1062,6 @@ div.content-other div.marcar_consulta a p {
 div.content-other div.marcar_consulta a:hover p {
     background-color: rgba(155, 155, 155, 0.25);
 }
-
-.divider {
-    float: left;
-    width: 1px;
-    min-height: 128px;
-    height: 100%;
-    background-color: #999;
-    margin-left: 1%;
-}
 /* Painel de noticias - edicao artigos
 -----------------------------------------------------------------------------*/
 
@@ -1050,7 +1084,9 @@ div.content-other div.marcar_consulta a:hover p {
     width: 80%;
     text-align: left;
 }
-
+#painel .content-right input {
+    width: 95%;
+}
 #painel .content-right textarea {
     width: 94%;
     height: 95%;
