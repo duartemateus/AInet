@@ -50,6 +50,53 @@ hr {
 img {
     vertical-align: middle;
 }
+address p{
+    position: relative;
+    font-size: 13px !important;
+    text-align: left !important;
+    margin-left: 18px;
+}
+address p:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: -18px;
+    height: 14px;
+    width: 14px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+address p.mphone:after{
+    background-image: url(../scm-imagens/mobile.png);
+}
+address p.phone:after{
+    background-image: url(../scm-imagens/phone.png);
+}
+address p.fax:after{
+    background-image: url(../scm-imagens/fax.png);
+}
+address p.email:after{
+    background-image: url(../scm-imagens/email.png);
+}
+address p.address:after{
+    background-image: url(../scm-imagens/address.png);
+}
+address p.specialty:after{
+    background-image: url(../scm-imagens/specialty.png);
+}
+address p.info:after{
+    background-image: url(../scm-imagens/info.png);
+}
+address p.clock:after{
+    background-image: url(../scm-imagens/clock.png);
+}
+address p.seta:after{
+    background-image: url(../scm-imagens/seta.png);
+}
+address p.seta{
+    margin-left: 30px;
+}
 fieldset {
     border: 0;
     margin: 0;
@@ -951,34 +998,34 @@ div.content-other div.marcar_consulta a:hover p {
 /* Autocomplete - Pesquisar
 -----------------------------------------------------------------------------*/
 .typeahead:focus {
-	border: 2px solid #0097CF;
+    border: 2px solid #0097CF;
 }
 .tt-query {
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 .tt-hint {
-	color: #999999;
+    color: #999999;
 }
 .tt-dropdown-menu {
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	margin-top: 5px;
-	padding: 5px 0;
-	width: 200px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    padding: 5px 0;
+    width: 200px;
 }
 .tt-suggestion {
-	font-size: 20px;
-	line-height: 20px;
-	padding: 3px 20px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 3px 20px;
 }
 .tt-suggestion.tt-is-under-cursor {
-        background-color: rgba(9, 118, 221, 0.5);
-        box-shadow:0 0 10px white inset;
+    background-color: rgba(9, 118, 221, 0.5);
+    box-shadow:0 0 10px white inset;
 }
 .tt-suggestion p {
-	margin: 0;
+    margin: 0;
 }
 
 /* Bot 

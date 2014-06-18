@@ -12,7 +12,8 @@
                             $doctors = array();
                             while ($row = mysqli_fetch_array($informacao_doutor)) {
                                 if (isset($doctors[$row['id']])) {
-                                    $doctors[$row['id']]['specialty_name'] = $doctors[$row['id']]['specialty_name'] . ", " . $row['specialty_name'];
+                                    $doctors[$row['id']]['specialty_name'] = trim($doctors[$row['id']]['specialty_name'] . ", " . $row['specialty_name']);
+                                    $doctors[$row['id']]['availability'] = trim($doctors[$row['id']]['availability'] . ":" . $row['availability']);
                                 } else {
                                     $doctors[$row['id']] = $row;
                                 }
@@ -20,7 +21,7 @@
                             foreach ($doctors as $row) {
                                 echo "  <div class='content-row cf'> \n
                                             <div class='content'> \n
-                                            <div class='content-other cf'> \n
+                                            <div class='content-other cf' id='specialty'> \n
                                             <div class='content-row cf'> \n
                                             <div class='content-left'> \n
                                             <div class='content-row'> \n
@@ -40,6 +41,15 @@
                                 if ($row['research'] != NULL) {
                                     echo "<p class='info'>" . strip_tags(str_replace("</li>", ",", $row['research']), '<br>') . "</p>";
                                 }
+                                echo "<br/>";
+                                $availability = explode(":", $row['availability']);
+                                $specialty = explode(", ", $row['specialty_name']);
+                                $count = count($availability);
+                                echo "<p class='clock'>Horário de atendimento:</p>";
+                                for ($i = 0; $i < $count; $i++) {
+                                    echo "<p class='seta'>" . $specialty[$i] . " - " . $availability[$i] . "</p>";
+                                }
+
                                 echo "  </address> \n";
 
                                 echo "  </div> \n";
@@ -97,20 +107,19 @@
                                                 <hr>
                                             </div>
                                             <div class="content-row">
-                                                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                                <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                                     <div class="content-row" style="display:inline-block">
                                                         <input type="text" placeholder="Pesquisar por Nome..." name="search_opt_name" class="typeahead tt-query" autocomplete="off" spellcheck="false"/>
                                                         <input class="hidden" type="submit"/>
                                                     </div>
                                                     <hr/>
                                                     <div class="content-row">
-                                                        <select placeholder="Pesquisar por Nome..." name="search_opt_speciality" id="speciality_search" onchange="javascript: $(this).closest($('form')).submit();
-                                                                $('.remove-typeahead').hide();">
-                                                                <?php
-                                                                while ($row = mysqli_fetch_array($areas_clinicas)) {
-                                                                    echo "<option value='0'>" . $row['short_name'] . "</option> \n";
-                                                                }
-                                                                ?>
+                                                        <select id="search_opt_speciality" placeholder="Pesquisar por Nome..." name="search_opt_speciality" id="speciality_search" onchange="loadXMLDoc();">
+                                                            <?php
+                                                            while ($row = mysqli_fetch_array($areas_clinicas)) {
+                                                                echo "<option value='0'>" . $row['short_name'] . "</option> \n";
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </div>
                                                 </form>
