@@ -15,7 +15,7 @@ body {
     font-family: 'VegurLight', 'Myriad Pro', 'Orienta', Arial, Helvetica, Sans-Serif;
     position: relative;
     background-color: white;
-    background-image: url(../img/pw_pattern_@2X.png);
+    //background-image: url(../img/pw_pattern_@2X.png);
 }
 h1,
 h2, 
@@ -165,10 +165,57 @@ fieldset.banner div{
     margin-right: 12px;
     padding: 10px;
 }
+fieldset.banner div a:hover h4{
+    color:#69C !important;
+}
 fieldset.banner div fieldset.banner div{
     border-left:12px solid transparent !important;
     border-right:12px solid transparent !important;
 }
+fieldset.news div{
+    display: inline-block;
+}
+fieldset.news .content-row{
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 5px;
+    
+}
+fieldset.news .dateholder {
+    display: block;
+    width: 60px;
+    height: 60px;
+    float:left;
+    background-color: rgba(102, 153, 204, 0.75);
+    box-shadow: 0px 0px 0px 1px #69C; 
+}
+fieldset.news .dateholder hr {
+    padding: 0;
+    margin: 0 10px;
+}
+fieldset.news .dateholder p {
+    font-size: 14px;
+    padding: 7px 0;
+    line-height: 1;
+    color:white;
+    font-weight: bolder;
+}
+fieldset.news .info {
+    display: block;
+    height: 60px;
+    float:left;
+    text-align: center;
+}
+fieldset.news .info p {
+    margin-left: 10px; 
+    text-decoration: none;
+}
+fieldset.news .info p.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
 textarea {
     margin-left: 2px;
     resize: none;
@@ -190,9 +237,18 @@ input.big_input[type="text"] {
 }
 input:not([type="reset"]):not([type="submit"]),
 textarea {
-    border-radius: 4px;
-    border: 1px silver inset;
+    width: 100%;
     outline: none;
+    border: 1px silver solid;
+    border-radius: 1px;
+    padding: 0.3em;
+}
+
+input:not([type="reset"]):not([type="submit"]):hover, 
+input:not([type="reset"]):not([type="submit"]):focus,
+textarea:hover,
+textarea:focus{
+    border: 1px solid #69C;
 }
 /* Classes Globais
 ##########################################################################################################################################################*/
@@ -622,8 +678,7 @@ div.has_sidebar div#container {
 div#container {
     position: relative;
     width: 100%;
-    border-color: silver;
-    box-shadow: 0 -2px 5px gray;
+    border: transparent;
     background-color: white;
     padding-bottom: 20px;
 }
@@ -635,14 +690,16 @@ div.content-left {
     text-align: left;
     float: left;
     clear: none;
-    width: 60%;
+    width: 58%;
+    border-right: 20px solid transparent; 
 }
 div.content-left.perfil {
     position: relative;
     text-align: right;
     float: left;
     clear: none;
-    width: 29%;
+    width: 27%;
+    border-left: 20px solid transparent; 
 }
 div.content-right {
     position: relative;

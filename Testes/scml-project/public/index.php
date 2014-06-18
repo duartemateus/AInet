@@ -1,7 +1,7 @@
 <?php 
 require_once '../config/commons.php';
 $vars = array();
-require_once './login.php';
+require_once './auth.php';
 $home = new controller_Home($vars);
 extract($vars);
 include VIEW_DIR.'head.php';

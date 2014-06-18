@@ -12,95 +12,117 @@
                     <div class='item-content'></div>
                 </div>
                 <div class="slider presentation">
-                    <?php for($i=0 ; $i<4; $i++){ echo 
-                        "<div class='slider-item'>\n
-                            <div class='image'>\n
-                                <a href='#'>\n
-                                    <img src='".IMG_DIR."/wide_image_sample.jpg' alt=''
-                                </a>\n
-                            </div>\n
-                            <div class='item-content'>\n
-                                <div>\n
-                                        <h4>\n
-                                            <a href='#'>A Santa Casa da Misericórdia de Leiria</a>\n
-                                        </h4>\n
-                                        <p>Instituição com 500 anos de história. Renova-se e actualiza-se diariamente. A presença num meio como a Internet é disto um bom exemplo. Com este site, pretende a Misericórdia de Leiria dar a conhecer a todos aqueles que nos visitam as suas valências sociais e os projectos em que estamos envolvidos. Esperamos que aprecie este endereço. </p>\n
-                                </div>\n
-                            </div>\n
-                        </div>\n"; } ?>
+                    <div class='slider-item'>
+                        <div class='image'>
+                            <a href='#'>
+                                <img src='<?php echo IMG_DIR . "present_scml.png"; ?>' alt=''/>
+                            </a>
+                        </div>
+                        <div class='item-content'>
+                        </div>
+                    </div>
+                    <div class='slider-item'>
+                        <div class='image'>
+                            <a href='#'>
+                                <img src='<?php echo IMG_DIR . "present_hospital.png"; ?>' alt=''/>
+                            </a>
+                        </div>
+                        <div class='item-content'>
+                        </div>
+                    </div>
+                    <div class='slider-item'>
+                        <div class='image'>
+                            <a href='#'>
+                                <img src='<?php echo IMG_DIR . "present_lar.png"; ?>' alt=''/>
+                            </a>
+                        </div>
+                        <div class='item-content'>
+                        </div>
+                    </div>
+                    <div class='slider-item'>
+                        <div class='image'>
+                            <a href='#'>
+                                <img src='<?php echo IMG_DIR . "present_creche.png"; ?>' alt=''/>
+                            </a>
+                        </div>
+                        <div class='item-content'>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+        <br/>
         <div class="content-row cf">
             <div class="content-left">
-                <div class="content cf">
-                    <div class="slider-wrapper news has_borders">
-                        <div class="slider-content">
-                            <div class='item-content'></div>
-                        </div>
-                        <div class="slider-paging"></div>
-                        <div class="slider news cf">
-                            <?php for($i=0 ; $i<4; $i++){ echo "\n
-                            <div class='slider-item'>\n
-                                <div class='image'>\n
-                                    <a href='#'>
-                                        <img src='../../scm-imagens/santa.png' alt=''/>
-                                    </a>\n
-                                </div>\n
-                                <div class='item-content'>\n
-                                    <h4>\n
-                                        <a href='#'>Texto ".$i. "</a>\n
-                                    </h4>\n
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n
-                                </div>\n
-                            </div>\n"; } ?>
-                        </div>
+                <div class="slider-wrapper publication has_borders">
+                    <a href="#" class="slider-content-previous">
+                        <span>Anterior</span>
+                    </a>
+                    <a href="#" class="slider-content-next">
+                        <span>Próximo</span>
+                    </a>
+                    <div class="slider-content">
+                        <div class='item-content'></div>
                     </div>
-                    <hr>
-                    <div class="slider-wrapper publication has_borders">
-                        <a href="#" class="slider-content-previous">
-                            <span>Anterior</span>
-                        </a>
-                        <a href="#" class="slider-content-next">
-                            <span>Próximo</span>
-                        </a>
-                        <div class="slider-content">
-                            <div class='item-content'></div>
-                        </div>
 
-                        <div class="slider publication">
-                            <?php for($i=0 ; $i<4; $i++){ echo "\n
-                            <div class='slider-item'>\n
-                                <div class='item-content'>\n
-                                    <h4>\n
-                                        <a href='#'>Texto ".$i. "</a>\n
-                                    </h4>\n
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n
-                                </div>\n
-                            </div>\n"; } ?>
-                        </div>
+                    <div class="slider publication">
+                        <?php
+                        foreach ($vars['news'] as $pub) {
+                            echo "\n
+                                <div class='slider-item'>\n
+                                    <div class='item-content'>\n
+                                        <h4>\n
+                                            <a href='#'>" . $pub['title'] . "</a>\n
+                                        </h4>\n
+                                        <p>" . $pub['abstract'] . "</p>\n
+                                        <p>Posted: " . $pub['date'] . "</p>
+                                    </div>\n
+                                </div>\n";
+                        }
+                        ?>
                     </div>
                 </div>
+                <hr>
+                <fieldset class="news title">
+                    <legend>
+                        <span>Ultimas Publicações</span>
+                    </legend>
+
+                    <?php
+                    foreach ($vars['publications'] as $pub) {
+                        echo "<div class='content-row cf'>\n
+                                <div class='dateholder'>\n
+                                    <p>12</p><hr/><p>asd</p>\n
+                                </div>\n
+                                <div class='info'>\n
+                                    <p class='title'>".$pub['title']."</p>\n
+                                    <a href='#'><p class='new' >coisas</p></a>\n
+                                </div>\n
+                            </div>\n";
+                    }
+                    ?>
+                </fieldset> 
             </div>
             <div class="content-right cf">
                 <div class="content-row cf">
-                    <div class="content">
-                        <fieldset class="banner">
-                            <legend>
-                                <span>this is a test</span>
-                            </legend>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </fieldset>
-                    </div>
+                    <fieldset class="banner">
+                        <legend>
+                            <span>As nossas Valencias</span>
+                        </legend>
+                        <div>
+                            <a href="#"><h4>Hospital D. Manuel de Aguiar</h4></a>
+                            <p>O Hospital D. Manuel de Aguiar (HDMA) oferece aos seus utentes uma unidade moderna e tecnologicamente apetrechada, apta para dar uma resposta profissional e competente nas suas diversas áreas de intervenção.</p>
+                            <hr/>
+                            <a href="#"><h4>Residencial XXI</h4></a>
+                            <p>A Residencial XXI é o local ideal para quem pretende uma opção de repouso de cariz familiar, onde a personalidade de cada utente determina o atendimento dos diversos profissionais desta unidade.</p>
+                            <hr/>
+                            <a href="#"><h4>Lar N. S. da Encarnação</h4></a>
+                            <p>O Lar Nossa Senhora da Encarnação recebe pessoas idosas, de ambos os sexos, com dificuldades ou ausência de inserção no meio social e familiar e que expressam vontade em serem admitidas nesta instituição.</p>
+                            <hr/>
+                            <a href="#"><h4>Creche Casa Sanches</h4></a>
+                            <p>Com esta infra-estrutura, a Santa Casa da Misericórdia de Leiria vocaciona mais uma importante valência no âmbito das suas competências sociais, com uma capacidade instalada para 33 crianças, dos 0 aos 36 meses.</p>
+                        </div>
+                    </fieldset>
                 </div>
             </div>
         </div>

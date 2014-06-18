@@ -3,46 +3,66 @@
 class controller_Auth {
 
     const AUTHENTICATED = 'authenticated';
-    const EMAIL = 'authenticated';
-    const USER_ID = 'authenticated';
+    const EMAIL = 'email';
+    const USER_ID = 'user_id';
 
     public function _construct() {
         session_start();
     }
 
     public function isAuthenticated() {
-        return isset($_SESSION[self::AUTHENTICATED]);
+        return isset($_SESSION[self::AUTHENTICATED]) && $_SESSION[self::AUTHENTICATED] == true;
+    }
+
+    // To delete later
+    public function teste($password) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        echo $password;
+        if (password_verify('marco', $hash)) {
+            echo 'Password is valid!';
+        } else {
+            echo 'Invalid password.';
+        }
     }
 
     public function authenticate($email, $password) {
-        $db = new model_DBConnection();
-        if (!$db->connected)
-            return false;
-
+        $db = new model_DB();
+        if (!$db->connected) {
+            return;
+        }
         $stmt = $db->conn->prepare('select id, hashed_password from scml_user where email=?');
         if (!$stmt) {
-            echo $db->conn->errno . ': ' . $db->conn->error;
-            return false;
+            return;
         }
         $stmt->bind_param('s', $email);
         if ($stmt->execute()) {
-            $stmt->bind_result($userID, $userPass);
+            $stmt->bind_result($userID, $hashedPass);
             if ($stmt->fetch()) {
-                if (crypt($password, $userPass) == $userPass) {
+                if (password_verify($password, $hashedPass)) {
                     $_SESSION[self::AUTHENTICATED] = true;
                     $_SESSION[self::EMAIL] = $email;
                     $_SESSION[self::USER_ID] = $userID;
-                    return true;
                 }
             }
             $stmt->free_result();
         }
-        return $this->isAuthenticated();
     }
 
     public function logOut() {
         $_SESSION = array();
         session_destroy();
+    }
+
+    public function getUser() {
+        if ($this->isAuthenticated()) {
+            $db = new model_DB();
+            if (!$db->connected) {
+                return null;
+            }
+            $result = $db->conn->query('SELECT p.* FROM `person` p, `scml_user` u WHERE p.id = u.person_id AND u.id = ' . $_SESSION[self::USER_ID]);
+            return mysqli_fetch_array($result);
+        }
+        return null;
     }
 
 }

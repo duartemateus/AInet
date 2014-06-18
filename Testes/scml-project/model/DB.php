@@ -1,13 +1,17 @@
 <?php
 
 class model_DB {
-
+    const host = '127.0.0.1';
+    const user = 'scml';
+    const password = 'scmladmin';
+    const database = 'scml_db';
+    
     public $conn;
     public $connected;
 
+    
     public function __construct() {
-        require_once '../config/dbaccess.php';
-        $this->conn = new mysqli($host, $user, $password, $database);
+        $this->conn = new mysqli(self::host, self::user, self::password, self::database);
         if ($this->conn->connect_errno) {
             $this->printMysqlError($conn->connect_errno, $conn->connect_error);
             $this->connected = false;
