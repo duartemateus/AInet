@@ -4,17 +4,15 @@
             <div class="content-row cf">
                 <div class="content-left perfil cf">
                     <div class="content-row cf">
-                        <div class="content-row cf">
-                            <?php
-                            $doctor_image = null;
-                            if (!$informacao_doutor[$id_doutor]['photo'] == NULL) {
-                                $doctor_image = $informacao_doutor[$id_doutor]['photo'];
-                            } elseif (!$informacao_doutor[$id_doutor]['photo_url'] == NULL) {
-                                $doctor_image = $informacao_doutor[$id_doutor]['photo_url'];
-                            }
-                            echo "  <img class='perfil' src='$doctor_image' alt=''/>  ";
-                            ?>
-                        </div>
+                        <?php
+                        $doctor_image = null;
+                        if (!$informacao_doutor[$id_doutor]['photo'] == NULL) {
+                            $doctor_image = $informacao_doutor[$id_doutor]['photo'];
+                        } elseif (!$informacao_doutor[$id_doutor]['photo_url'] == NULL) {
+                            $doctor_image = $informacao_doutor[$id_doutor]['photo_url'];
+                        }
+                        echo "  <img class='perfil' src='$doctor_image' alt=''/>  ";
+                        ?>
                     </div>
                 </div>                
                 <div class="content-right perfil cf">
@@ -75,12 +73,17 @@
                             </legend>
 
                             <?php
-                            foreach ($vars['publications'] as $pub) {
-                                $timestamp = strtotime($pub['date']);
-                                $day = date("d", $timestamp);
-                                $month = date("M", $timestamp);
+                            if (count($vars['publications']) == 0) {
+                                echo "  <div class='content-row cf'>\n";
+                                echo "<p class='error'>Este Doutor ainda não fez nenhuma publicação. <br></p>";
+                                echo " </div>\n";
+                            } else {
+                                foreach ($vars['publications'] as $pub) {
+                                    $timestamp = strtotime($pub['date']);
+                                    $day = date("d", $timestamp);
+                                    $month = date("M", $timestamp);
 
-                                echo "
+                                    echo "
                         <div class='content-row cf'>\n
                             <div class='dateholder'>\n
                                 <p>" . $day . "</p><hr/><p>" . $month . "</p>\n
@@ -90,6 +93,7 @@
                                <p class='author'>Publicado por:  <a href='#'>" . $pub['name'] . "</a></p>\n
                             </div>\n
                         </div>\n";
+                                }
                             }
                             ?>
                         </fieldset> 
@@ -98,18 +102,34 @@
                 <div class="content-right cf">
                     <div class="content-row cf">
                         <div class="content-other filter info">
-                            <div class="content-row cf">
-                                <div class="content">
+                            <div class="content">
+                                <div class="content-row cf">
                                     <p class="search"> Horário Atendimento </p>
                                     <hr/>
                                 </div>
-                            </div>
-                            <div class="content-row cf">
-                                <div class="content">
-                                    
+                                <div class="content-row cf">
+                                    <?php
+                                    echo "  <address> \n";
+                                    $availability = explode(":", $informacao_doutor[$id_doutor]['availability']);
+                                    $specialty = explode(", ", $informacao_doutor[$id_doutor]['specialty_name']);
+                                    $count = count($availability);
+                                    for ($i = 0; $i < $count; $i++) {
+                                        echo "<p class='specialty_info specialty'>" . $specialty[$i] . "</p> <p class='seta'> " . $availability[$i] . "</p><br/>";
+                                    }
+                                    echo "  </address> \n";
+                                    ?>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-row cf">
+                <br/>
+                <br/>
+                <div class="content-other">
+                    <div class="content">
+                        <p>Acordos</p>
                     </div>
                 </div>
             </div>

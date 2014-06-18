@@ -58,6 +58,10 @@ address p{
 address p.no_quote{
     color: darkgray !important;
 }
+address p.specialty_info{
+    font-size: 14px !important;
+    background-color: #f5f5f5;
+}
 address p:after{
     content: '';
     position: absolute;
@@ -926,6 +930,11 @@ div.content-row p.perfil {
     font-size: 18px;
     font-weight: bold;
     margin-left: 10px;
+}
+div.content-row p.error {
+    color: #626262;
+    font-size: 13px;
+    padding-left: 10px;
 }
 div.content-row input{
     width: 200px;
