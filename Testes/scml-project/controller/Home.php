@@ -9,8 +9,6 @@ class controller_Home{
         $vars['firstnavbar'] = 0;
         $vars['secondnavbar'] = 0;
     }
-
-
     
     public function get_view(&$vars){
         $db = new model_DB();
