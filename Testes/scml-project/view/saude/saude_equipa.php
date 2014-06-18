@@ -101,7 +101,7 @@
                                             <div class="content-row">
                                                 <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                                     <div class="content-row" style="display:inline-block">
-                                                        <input type="text" placeholder="Pesquisar por Nome..." name="search_opt_name" class="typeahead tt-query" autocomplete="off" spellcheck="false"/>
+                                                        <input class="fill"  type="text" placeholder="Pesquisar por Nome..." name="search_opt_name" class="typeahead tt-query" autocomplete="off" spellcheck="false"/>
                                                         <input class="hidden" type="submit"/>
                                                     </div>
                                                     <hr/>

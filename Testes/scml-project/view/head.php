@@ -324,9 +324,9 @@ echo "}";
                     <p id="login-form-tips">Todos os campos são necessários.</p>
                     <fieldset>
                         <label for="login_email">Email do Utilizador</label>
-                        <input type="email" placeholder="Email do Utilizador" name="login_email" id="login_email" value="">
+                        <input class="fill" type="email" placeholder="Email do Utilizador" name="login_email" id="login_email" value="">
                         <label for="login_password">Palavra-Chave</label>
-                        <input type="password" pattern=".{4,24}" placeholder="Palavra-Chave" name="login_password" id="login_password" value="" autocomplete="off">
+                        <input class="fill" type="password" pattern=".{4,24}" placeholder="Palavra-Chave" name="login_password" id="login_password" value="" autocomplete="off">
                     </fieldset>
                 </form>
             </div> 

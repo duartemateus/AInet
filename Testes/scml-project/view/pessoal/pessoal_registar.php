@@ -53,7 +53,7 @@
                                     <tr>
                                         <td class="left required">Nome Completo:</td>
                                         <td>
-                                            <input class="big" type="text" name="nome" pattern="[A-Za-z]{5,}" required/>
+                                            <input class="big" type="text" name="nome" pattern="[A-Za-z\s]{5,}" required/>
                                         </td>
                                     </tr>
                                     <tr>
