@@ -1,4 +1,4 @@
-/* CSS 3.0  _  2120149, 2120189, 2121000 */
+﻿/* CSS 3.0  _  2120149, 2120189, 2121000 */
 
 /* Color codes:
 /*      ORANGES:    
@@ -15,7 +15,6 @@ body {
     font-family: 'VegurLight', 'Myriad Pro', 'Orienta', Arial, Helvetica, Sans-Serif;
     position: relative;
     background-color: white;
-    background-image: url(../img/pw_pattern_@2X.png);
 }
 h1,
 h2, 
