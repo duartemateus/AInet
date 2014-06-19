@@ -8,7 +8,7 @@ if (!$auth->isAuthenticated() && isset($login_email) && isset($login_password)) 
     $auth->authenticate($login_email, $login_password);
 }
 if ($auth->isAuthenticated() && isset($logout)) {
-    $user = $auth->getUser();
+    $auth->logOut();
 }
 if ($auth->isAuthenticated()) {
     $user = $auth->getUser();

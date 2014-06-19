@@ -109,18 +109,18 @@ class controller_PessoalRegistar {
         if ($db->connected) {
             // Insert Person
             $query = "INSERT INTO `person`(`name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`) "
-                    . "VALUES (" . $vars['nome'] . "," . $vars['datanascimento'] . "," . $vars['sexo'] . "," . $vars['nacionalidade'] . "," . $vars['morada'] . "," . $vars['postal'] . "," . $vars['cidade'] . "," . $vars['email'] . "," . $vars['contribuinte'] . "," . $vars['bi'] . "," . $vars['telemovel'] . "," . $vars['fixo'] . "," . $vars['sns'] . ")";
+                . "VALUES ('". $id ."','" . $var['nome'] . "','" . $var['datanascimento'] . "','" . $var['sexo'] . "','" . $var['nacionalidade'] . "','" . $var['morada'] . "','" . $var['postal'] . "','" . $var['cidade'] . "','" . $var['email'] . "','" . $var['contribuinte'] . "','" . $var['bi'] . "','" . $var['telemovel'] . "','" . $var['fixo'] . "','" . $var['sns'] . "')";
             $db->conn->query($query);
             // Get Person ID
             $query = "SELECT * FROM person WHERE email =" . $vars['email'];
             $result = $db->conn->query($query);
             $row = mysql_fetch_row($result);
-            $id = $row[0];
+            $person_id = $row[0];
             // Hash the Pass
             $hashed_password = password_hash($vars['password'], PASSWORD_DEFAULT);
             // Insert User
-            $query = "INSERT INTO `scml_user`(`email`,`hashed_password` , `salt`, `role`, `photo`, `photo_url`, `photo_mimetype`, `last_successful_login`, `invalid_login_attempts`, `active`, `created_at`, `updated_at`, `person_id`, `remember_token`) "
-                    . "VALUES ´(" . $vars['email'] . "," . $hashed_password . ",'10','4',NULL,NULL,NULL,NULL,'0','1','0',NULL," . $id . ",NULL)";
+            $query = "INSERT INTO `scml_user`(`email`,`hashed_password` , `salt`, `role`, `person_id`) "
+                . "VALUES ´('" . $var['email'] . "','" . $hashed_password . "','10','4','" . $person_id . "')";
             $db->conn->query($query);
             // Authenticate User
             $auth = new controller_Auth();
