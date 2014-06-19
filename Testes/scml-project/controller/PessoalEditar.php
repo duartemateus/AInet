@@ -1,6 +1,6 @@
 <?php
 
-class controller_PessoalRegistar {
+class controller_PessoalEditar {
 
     const FORM_FIRST = 0;
     const FORM_ERRORS = 1;
@@ -10,23 +10,11 @@ class controller_PessoalRegistar {
         $vars['title'] = "Santa Casa da Misericórdia de Leiria";
         $vars['keywords'] = "";
         $vars['description'] = "";
-        $vars['firstnavbar'] = 0;
-        $vars['secondnavbar'] = 0;
+        $vars['firstnavbar'] = 6;
+        $vars['secondnavbar'] = 2;
     }
 
     public function prepare_vars(&$vars) {
-        $db = new model_DB();
-        if ($db->connected) {
-            $result = $db->conn->query("SELECT * FROM person WHERE id = $sessionid");
-            $pessoa = array();
-            $i = 0;
-            while ($r = mysqli_fetch_array($result)) {
-                $pessoa[$i] = $r;
-                $i = $i + 1;
-            }
-            $vars['pessoa'] = $pessoa;
-
-        }
         $fValid = $this->checkPosts($vars);
         switch ($fValid) {
             case self::FORM_ERRORS:
@@ -61,7 +49,7 @@ class controller_PessoalRegistar {
         $vars['contribuinte'] = $this->testValue('contribuinte', $vars);
         $vars['datanascimento'] = $this->testValue('datanascimento', $vars);
         $vars['postal'] = $this->testValue('postal', $vars);
-        if (!valid) {
+        if (!$valid) {
             return self::FORM_ERRORS;
         } else {
             return self::FORM_OK;
@@ -100,10 +88,13 @@ class controller_PessoalRegistar {
     }
 
     private function testValue($v_name, $vars) {
-        $data = $_POST[$v_name];
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+        $data = '';
+        if (isset($_POST[$v_name])) {
+            $data = $_POST[$v_name];
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+        }
         return $data;
     }
 
@@ -112,7 +103,7 @@ class controller_PessoalRegistar {
         if ($db->connected) {
             // Insert Person
 
-$query = "UPDATE person SET name='" . $var['nome'] . "',date_of_birth='" . $var['datanascimento'] . "',email='" . $var['email'] . "',gender='" . $var['sexo'] . "',nationality='" . $var['nacionalidade'] . "',address='" . $var['morada'] . "',post_code='" . $var['postal'] . "',city='" . $var['cidade'] . "',email='" . $var['email'] . "',fical_id='" . $var['contribuinte'] . "',civil_id='" . $var['bi'] . "',mobile_phone='" . $var['telemovel'] . "',phone='" . $var['fixo'] . "',sns='" . $var['sns'] . "' where id='" . $_SESSION['user_id'] . "'";
+            $query = "UPDATE person SET name='" . $var['nome'] . "',date_of_birth='" . $var['datanascimento'] . "',email='" . $var['email'] . "',gender='" . $var['sexo'] . "',nationality='" . $var['nacionalidade'] . "',address='" . $var['morada'] . "',post_code='" . $var['postal'] . "',city='" . $var['cidade'] . "',email='" . $var['email'] . "',fical_id='" . $var['contribuinte'] . "',civil_id='" . $var['bi'] . "',mobile_phone='" . $var['telemovel'] . "',phone='" . $var['fixo'] . "',sns='" . $var['sns'] . "' where id='" . $_SESSION['user_id'] . "'";
             $db->conn->query($query);
             // Get Person ID
             $query = "SELECT * FROM person WHERE email =" . $var['email'];
@@ -134,7 +125,7 @@ $query = "UPDATE person SET name='" . $var['nome'] . "',date_of_birth='" . $var[
     }
 
     public function get_view(&$vars) {
-        return VIEW_DIR . 'pessoal/pessoal_registar.php';
+        return VIEW_DIR . 'pessoal/pessoal_editar.php';
     }
 
 }
