@@ -247,7 +247,7 @@ echo "}";
                                     </div>
                                 </div>
                             </a>";
-                            if ($_SESSION['user_role'] < 3) {
+                            if ($_SESSION['user_role'] < 4) {
                                 echo "  
                                 <a " . ($firstnavbar == 7 ? 'class=\"active\"' : "") . "href='admin.php'>
                                     <div class='imageholder'>

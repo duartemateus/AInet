@@ -14,9 +14,6 @@
                         <br/>
                         <p>
                             Podem ser admitidos como irmãos todas as pessoas de ambos os sexos; de maioridade; sejam naturais e residentes ou ligados por laços de afectividade ao concelho da sede da Irmandade; gozem de boa reputação moral e social; aceitem os princípios da doutrina e da moral cristãos que informam a Irmandade; e que se comprometam ao pagamento de uma quota semestral.
-                        </p>
-                        <br/>
-                        <p>
                             A admissão dos irmãos é feita mediante proposta subscrita por dois irmãos e pelo próprio candidato e aprovada em Mesa Administrativa por maioria absoluta dos votos dos seus membros presentes na respectiva votação.
                         </p>
 
@@ -31,15 +28,8 @@
                         <h3>Exclusão dos Irmãos</h3>
                         <p>
                             Serão excluídos da Irmandade todos os irmãos que solicitarem a sua exoneração; que deixarem de pagar a sua quota por tempo superior a dois anos; que não prestarem conta dos valores que lhes tenham sido confiados; que, sem motivo justificado, se recusarem a ocupar os lugares dos Corpos Sociais para os quais foram eleitos; que perderam a boa reputação moral e social ou voluntariamente causaram danos à Irmandade; que tomem atitudes hostis à Religião Católica; e finalmente por aplicação da pena de exclusão por parte da Mesa Administrativa.
-
-                            Se pretender ajudar a Santa Casa da Misericórdia de Leiria/Hospital D. Manuel de Aguiar inscreva-se na qualidade de Irmão ou então torne-se seu benfeitor.</p>
-
-
-
-
-
-
-
+                            Se pretender ajudar a Santa Casa da Misericórdia de Leiria/Hospital D. Manuel de Aguiar inscreva-se na qualidade de Irmão ou então torne-se seu benfeitor.
+                        </p>
                     </div>
                 </div> 
             </div>
