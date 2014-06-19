@@ -1,4 +1,7 @@
 <div id="middle" class="wrapper">
+    <div class="titulo">
+        <h1>Cuidados Geriátricos</h1>
+    </div>
     <div class="has_sidebar cf">
         <div id="sidebar">
             <a href="#1">

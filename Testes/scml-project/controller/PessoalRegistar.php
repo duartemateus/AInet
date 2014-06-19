@@ -109,7 +109,7 @@ class controller_PessoalRegistar {
         if ($db->connected) {
             // Insert Person
             $query = "INSERT INTO `person`(`name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`) "
-                . "VALUES ('". $id ."','" . $var['nome'] . "','" . $var['datanascimento'] . "','" . $var['sexo'] . "','" . $var['nacionalidade'] . "','" . $var['morada'] . "','" . $var['postal'] . "','" . $var['cidade'] . "','" . $var['email'] . "','" . $var['contribuinte'] . "','" . $var['bi'] . "','" . $var['telemovel'] . "','" . $var['fixo'] . "','" . $var['sns'] . "')";
+                . "VALUES ('" . $var['nome'] . "','" . $var['datanascimento'] . "','" . $var['sexo'] . "','" . $var['nacionalidade'] . "','" . $var['morada'] . "','" . $var['postal'] . "','" . $var['cidade'] . "','" . $var['email'] . "','" . $var['contribuinte'] . "','" . $var['bi'] . "','" . $var['telemovel'] . "','" . $var['fixo'] . "','" . $var['sns'] . "')";
             $db->conn->query($query);
             // Get Person ID
             $query = "SELECT * FROM person WHERE email =" . $vars['email'];

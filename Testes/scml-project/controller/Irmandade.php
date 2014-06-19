@@ -1,18 +1,18 @@
 <?php
 
-class controller_Creche{
+class controller_Irmandade{
     
     public function __construct(&$vars) {
         $vars['title'] = "Santa Casa da Misericórdia de Leiria";
         $vars['keywords'] = "";
         $vars['description'] = "";
-        $vars['firstnavbar'] = 3;
+        $vars['firstnavbar'] = 4;
         $vars['secondnavbar'] = 0;
     }
     
     public function get_view(&$vars){
         $db = new model_DB();
-        $query= "SELECT * FROM publication WHERE type = 8";
+        $query= "SELECT * FROM publication WHERE type = 9";
         $result = $db->conn->query($query);
         $news = array();
         while($r = mysqli_fetch_array($result)){
@@ -28,7 +28,7 @@ class controller_Creche{
         $news_types['8'] = 'Creche Casa Sanches';
         $news_types['9'] = 'Irmandade';
         $vars['news_types'] = $news_types;
-        return VIEW_DIR.'creche/creche.php';
+        return VIEW_DIR.'irmandade/irmandade.php';
     }
 }
 
