@@ -35,7 +35,7 @@
                                         </p>
                                         <p class="email">
                                             <a href="mailto:geral@misericordiadeleiria.pt" target="_top">geral@misericordiadeleiria.pt</a>
-
+                                        </p>
                                     </div>
                                 </div>
                             </address>

@@ -28,7 +28,10 @@
                                 } if (!$row['phone'] == NULL) {
                                     echo "<p class='phone'>" . $row['phone'] . "</p>";
                                 }
-                                echo "<p class='email'>" . $row['email'] . "</p>";
+                                echo "<p class='email'>";
+                                echo "<a href='mailto:" . $row['email'] . "'>";
+                                echo $row['email'] . "</a>";
+                                echo "</p>";
                                 echo "<p class='specialty'>" . $row['specialty_name'] . "</p>";
                                 if ($row['research'] != NULL) {
                                     echo "<p class='info'>" . strip_tags(str_replace("</li>", ",", $row['research']), '<br>') . "</p>";
