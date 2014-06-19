@@ -1,137 +1,81 @@
 <div id="middle" class="wrapper">
+    <div class="titulo">
+        <h1>Editar Dados Médico</h1>
+    </div>
     <div>
-        <div id="container" class="cf has_borders">
-            <div class="content-row cf">
-                <div class="content-left perfil cf">
-                    <div class="content-row cf">
-                        <?php
-                        $doctor_image = null;
-                        if (!$informacao_doutor[$id_doutor]['photo'] == NULL) {
-                            $doctor_image = $informacao_doutor[$id_doutor]['photo'];
-                        } elseif (!$informacao_doutor[$id_doutor]['photo_url'] == NULL) {
-                            $doctor_image = $informacao_doutor[$id_doutor]['photo_url'];
-                        }
-                        echo "  <img class='perfil' src='$doctor_image' alt=''/>  ";
-                        ?>
-                    </div>
-                </div>                
-                <div class="content-right perfil cf">
-                    <div class="content-row">
-                        <div class="content-other">
-                            <div class="content">
-                                <div class="content-row cf">
-                                    <p class='perfil'><?php echo $informacao_doutor[$id_doutor]['doctor_name'] ?></p>
-                                    <hr>
-                                    <div class="content-left half divider">
-                                        <div class="content-row cf">
-                                            <?php
-                                            echo "  <address> \n";
-                                            if (!$informacao_doutor[$id_doutor]['mobile_phone'] == NULL) {
-                                                echo "<p class='mphone'>" . $informacao_doutor[$id_doutor]['mobile_phone'] . "</p>";
-                                            } if (!$informacao_doutor[$id_doutor]['phone'] == NULL) {
-                                                echo "<p class='phone'>" . $informacao_doutor[$id_doutor]['phone'] . "</p>";
-                                            }
-                                            echo "<p class='email'>" . $informacao_doutor[$id_doutor]['email'] . "</p>";
-                                            echo "<p class='specialty'>" . $informacao_doutor[$id_doutor]['specialty_name'] . "</p>";
-                                            if ($informacao_doutor[$id_doutor]['research'] != NULL) {
-                                                echo "<p class='info'>" . strip_tags(str_replace("</li>", ",", $informacao_doutor[$id_doutor]['research']), '<br>') . "</p>";
-                                            }
-                                            echo "  </address> \n";
-                                            ?>
-                                        </div>
+        <div id="container">
+            <div class="content-row">
+                <fieldset class="title">
+                    <legend>
+                        <span>Dados Médico</span>
+                    </legend>
+                    <div class="content-text">
+                        <div class="content-row cf">
+                            <div class="content-left">
+                                <div class="content-row">
+                                    <div class="content">
+                                        <table>
+                                            <tr>
+                                                <td class="left required">Alcunha:</td>
+                                                <td>
+                                                    <input class="big" type="text" name="alcunha" value="<?php echo $informacao_doutor[$id_doutor]['doctor_name'] ?>" pattern="[A-Za-z\s]{5,}" required/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">Especialidades:</td>
+                                                <td>
+                                                    <select id="select_opt_speciality" name="select_opt_speciality">
+                                                        <?php
+                                                        foreach ($areas_clinicas as $row) {
+                                                            echo "<option value='0'>" . $row['short_name'] . "</option> \n";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <textarea disabled="" type="text" name="horarios"> </textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">Periodos de consulta:</td>
+                                                <td>
+                                                    <select id="select_opt_speciality_horario" name="select_opt_speciality_horario">
+                                                        <?php
+                                                        foreach ($areas_clinicas as $row) {
+                                                            echo "<option value='0'>" . $row['short_name'] . "</option> \n";
+                                                        }
+                                                        echo "</select>";
+                                                        $specialty = explode(", ", $row['specialty_name']);
+                                                        $count = count($availability);
+                                                        echo "<textarea type='text' name='horarios' value=''> </textarea>";
+                                                        for ($i = 0; $i < $count; $i++) {
+                                                            echo "<p class='seta'>" . $specialty[$i] . " - " . $availability[$i] . "</p>";
+                                                        }
+                                                        ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <input type="submit" value="Confirmar" />
+                                                    <input type="reset" value="Cancelar" />
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
-                                    <div class="content-right half">
-                                        <div class="content-row cf">
-                                            <?php
-                                            echo "  <address> \n";
-                                            if ($informacao_doutor[$id_doutor]['research'] != NULL) {
-                                                echo "<p class='quote'>" . strip_tags(str_replace("</li>", ",", $informacao_doutor[$id_doutor]['profile']), '<br>') . "</p>";
-                                            } else {
-                                                echo "<p class='no_quote'> Sem Informação disponível... <br></p>";
-                                            }
-                                            echo "  </address> \n";
-                                            ?>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="content-right">
+                                <div class="content-row">
+                                    <div class="content">
+                                        <p>Alterar imagem perfil:</p>
+                                        <hr/>
+                                        <img id="uploadPreview" class="preview" />
+                                        <input id="uploadImage" type="file" name="myPhoto" onchange="previewImage();" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="content-row cf">
-
-                <br/>
-                <hr/>
-                <br/>
-
-                <div class="content-left cf">
-                    <div class="content-row cf">
-                        <fieldset class="news title">
-                            <legend>
-                                <span>Ultimas Publicações</span>
-                            </legend>
-
-                            <?php
-                            if (count($vars['publications']) == 0) {
-                                echo "  <div class='content-row cf'>\n";
-                                echo "<p class='error'>Este Doutor ainda não fez nenhuma publicação. <br></p>";
-                                echo " </div>\n";
-                            } else {
-                                foreach ($vars['publications'] as $pub) {
-                                    $timestamp = strtotime($pub['date']);
-                                    $day = date("d", $timestamp);
-                                    $month = date("M", $timestamp);
-
-                                    echo "
-                        <div class='content-row cf'>\n
-                            <div class='dateholder'>\n
-                                <p>" . $day . "</p><hr/><p>" . $month . "</p>\n
-                            </div>\n
-                            <div class='info'>\n
-                               <p class='title'><a href='#'>" . $pub['title'] . "</a></p>\n
-                               <p class='author'>Publicado por:  <a href='#'>" . $pub['name'] . "</a></p>\n
-                            </div>\n
-                        </div>\n";
-                                }
-                            }
-                            ?>
-                        </fieldset> 
-                    </div>
-                </div>
-                <div class="content-right cf">
-                    <div class="content-row cf">
-                        <div class="content-other filter info">
-                            <div class="content">
-                                <div class="content-row cf">
-                                    <p class="search"> Horário Atendimento </p>
-                                    <hr/>
-                                </div>
-                                <div class="content-row cf">
-                                    <?php
-                                    echo "  <address> \n";
-                                    $availability = explode(":", $informacao_doutor[$id_doutor]['availability']);
-                                    $specialty = explode(", ", $informacao_doutor[$id_doutor]['specialty_name']);
-                                    $count = count($availability);
-                                    for ($i = 0; $i < $count; $i++) {
-                                        echo "<p class='specialty_info specialty'>" . $specialty[$i] . "</p> <p class='seta'> " . $availability[$i] . "</p><br/>";
-                                    }
-                                    echo "  </address> \n";
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-row cf">
-                <br/>
-                <br/>
-                <div class="content-other">
-                    <div class="content">
-                        <p>Acordos</p>
-                    </div>
-                </div>
+                </fieldset>
             </div>
         </div>
     </div>

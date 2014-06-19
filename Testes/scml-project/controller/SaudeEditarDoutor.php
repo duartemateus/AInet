@@ -1,6 +1,6 @@
 <?php
 
-class controller_SaudeDoutor {
+class controller_SaudeEditarDoutor {
 
     public function __construct(&$vars) {
         $vars['title'] = "Santa Casa da Misericórdia de Leiria";
@@ -13,6 +13,12 @@ class controller_SaudeDoutor {
     public function prepare_vars(&$vars) {
         $db = new model_DB();
         if ($db->connected) {
+            $result = mysqli_query($db->conn, "SELECT * FROM clinical_specialty ORDER BY short_name");
+            $areas_clinicas = array();
+            while ($r = mysqli_fetch_array($result)) {
+                $areas_clinicas[$r['id']] = $r;
+            }
+            $vars['areas_clinicas'] = $areas_clinicas;
             $query = "SELECT d.id, d.name AS doctor_name, d.research, d.profile, cs.short_name AS specialty_name, ds.availability, ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email, su.photo
                         FROM doctor d, doctor_specialty ds, clinical_specialty cs, person p, scml_user su
                         WHERE (d.id = ds.doctor_id AND cs.id = ds.clinical_specialty_id AND d.user_id = p.id AND p.id = su.id)
@@ -33,7 +39,7 @@ class controller_SaudeDoutor {
     }
 
     public function get_view(&$vars) {
-        return VIEW_DIR . 'saude/saude_doutor.php';
+        return VIEW_DIR . 'saude/saude_editarDoutor.php';
     }
 
 }

@@ -988,6 +988,11 @@ div.content-row img.portrait {
     width: 128px;
     height: 128px;
 }
+div.content-row img.preview {
+    width: 125px;
+    height: 125px;
+    background-size: cover;
+}
 div.content-row img.perfil {
     width: 220px;
     height: 220px;

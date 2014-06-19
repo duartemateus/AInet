@@ -106,7 +106,6 @@ if (isset($doctor_name)) {
                         login.submit();
                     }
                 }
-
                 dialog.dialog({
                     autoOpen: false,
                     width: 400,
@@ -173,6 +172,15 @@ echo "}";
                 }
                 xmlhttp.open("GET", "equipa_clinica.php?x=" + array[specialty], true);
                 xmlhttp.send();
+            }
+
+            function previewImage() {
+                var oFReader = new FileReader();
+                oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+                oFReader.onload = function(oFREvent) {
+                    document.getElementById("uploadPreview").src = oFREvent.target.result;
+                };
             }
 
         </script>

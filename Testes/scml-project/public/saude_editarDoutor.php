@@ -3,7 +3,7 @@
 require_once '../config/commons.php';
 $vars = array();
 require_once './auth.php';
-$controller = new controller_SaudeDoutor($vars);
+$controller = new controller_SaudeEditarDoutor($vars);
 $controller->prepare_vars($vars);
 extract($vars);
 include VIEW_DIR . 'head.php';
