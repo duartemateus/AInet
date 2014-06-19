@@ -2,7 +2,7 @@
 require_once '../config/commons.php';
 $vars = array();
 require_once './auth.php';
-$controller = new controller_PessoalRegistar($vars);
+$controller = new controller_PessoalEditar($vars);
 $controller->prepare_vars($vars);
 extract($vars);
 include VIEW_DIR.'head.php';

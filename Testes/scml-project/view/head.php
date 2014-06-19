@@ -240,7 +240,7 @@ echo "}";
                         <?php
                         if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                             echo "  
-                            <a " . ($firstnavbar == 6 ? 'class=\"active\"' : "") . "href='areapessoal.php'>
+                            <a " . ($firstnavbar == 6 ? 'class=\'active\'' : '' ) . "href='pessoal_area.php'>
                                 <div class='imageholder'>
                                     <div>
                                         <h1>Área Pessoal</h1>
@@ -249,7 +249,7 @@ echo "}";
                             </a>";
                             if ($_SESSION['user_role'] < 4) {
                                 echo "  
-                                <a " . ($firstnavbar == 7 ? 'class=\"active\"' : "") . "href='admin.php'>
+                            <a " . ($firstnavbar == 7 ? 'class=\'active\'' : '' ) . "href='#'>
                                     <div class='imageholder'>
                                         <div>
                                             <h1>Administração</h1>
@@ -289,7 +289,14 @@ echo "}";
                             case 3: break;
                             case 4: break;
                             case 5: break;
-                            case 6: break;
+                            case 6:
+                                $str = "<li" . ($secondnavbar == 1 ? " class='active'" : "") . ">\n
+                                <a href='pessoal_area.php'>Dados Pessoal</a>\n
+                            </li>\n
+                            <li" . ($secondnavbar == 2 ? " class='active'" : "") . ">\n
+                                <a href='pessoal_editar.php'>Alterar Dados Pessoais</a>\n
+                            </li>\n";
+                                break;
                             case 7: break;
                         }
                         echo $str;

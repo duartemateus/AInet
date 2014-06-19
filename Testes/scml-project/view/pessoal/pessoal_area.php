@@ -13,19 +13,19 @@
                         <tr>
                             <td class="left required">Nome Completo:</td>
                             <td>
-                                <text class="big" name="nome" required/><span><?php echo (!empty($person['name'])) ? $person['name'] : "";?></span>
+                                <text class="big" name="nome" required/><span><?php echo (!empty($user['name'])) ? $user['name'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Email:</td>
                             <td>
-                                <text class="medium" name="email" required/><span><?php echo (!empty($person[''])) ? $person['email'] : "";?></span>
+                                <text class="medium" name="email" required/><span><?php echo (!empty($user[''])) ? $user['email'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Data de Nascimento:</td>
                             <td>
-                                <text id="datepicker" name="datanascimento"><span><?php echo (!empty($person['date_of_birth'])) ? $person['date_of_birth'] : "";?></span>
+                                <text id="datepicker" name="datanascimento"><span><?php echo (!empty($user['date_of_birth'])) ? $user['date_of_birth'] : "";?></span>
                                     </td>
                         </tr>
                         <tr>
@@ -33,38 +33,38 @@
                                 Sexo:
                             </td>
                             <td>
-                                <text name="sexo"  checked="checked" /><span><?php echo (!empty($person['gender'])) ? $person['gender'] : "";?></span>
+                                <text name="sexo"  checked="checked" /><span><?php echo (!empty($user['gender'])) ? $user['gender'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Nacionalidade:</td>
                             <td>
-                                <text name="nacionalidade" /><span><?php echo (!empty($person['nationality'])) ? $person['nationality'] : "";?></span>
+                                <text name="nacionalidade" /><span><?php echo (!empty($user['nationality'])) ? $user['nationality'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Morada:</td>
                             <td>
-                                <text class="big" name="morada" /><span><?php echo (!empty($person['address'])) ? $person['address'] : "";?></span>
+                                <text class="big" name="morada" /><span><?php echo (!empty($user['address'])) ? $user['address'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Codigo Postal:</td>
                             <td>
-                                <text name="postal" /><span><?php echo (!empty($person['post_code'])) ? $person['post_code'] : "";?></span>
+                                <text name="postal" /><span><?php echo (!empty($user['post_code'])) ? $user['post_code'] : "";?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="left">Cidade:</td>
                             <td>
-                                <text class="text" name="cidade" /><?php echo (!empty($person['city'])) ? $person['city'] : "";?></span>
+                                <text class="text" name="cidade" /><?php echo (!empty($user['city'])) ? $user['city'] : "";?></span>
                         </td>
                     </tr>
 
                 <tr>
                     <td class="left">Numero Contribuinte</td>
                     <td>
-                        <text name="contribuinte" /><span><?php echo (!empty($person['fiscal_id'])) ? $person['fiscal_id'] : "";?></span>
+                        <text name="contribuinte" /><span><?php echo (!empty($user['fiscal_id'])) ? $user['fiscal_id'] : "";?></span>
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +72,7 @@
                         BI/CC:
                     </td>
                     <td>
-                        <text name="bi" pattern=".{8}"/><span><?php echo (!empty($person['civil_id'])) ? $person['civil_id'] : "";?></span>  
+                        <text name="bi" pattern=".{8}"/><span><?php echo (!empty($user['civil_id'])) ? $user['civil_id'] : "";?></span>  
                     </td>
                 </tr>
                 <tr>
@@ -80,7 +80,7 @@
                         Telemóvel:
                     </td>
                     <td>
-                        <text name="telemovel"/><span><?php echo (!empty($person['mobile_phone'])) ? $person['mobile_phone'] : "";?></span>
+                        <text name="telemovel"/><span><?php echo (!empty($user['mobile_phone'])) ? $user['mobile_phone'] : "";?></span>
                     </td>
                 </tr>
                 <tr>
@@ -88,7 +88,7 @@
                         Telefone Fixo:
                     </td>
                     <td>
-                        <text name="fixo" /><span><?php echo (!empty($person['phone'])) ? $person['phone'] : "";?></span>
+                        <text name="fixo" /><span><?php echo (!empty($user['phone'])) ? $user['phone'] : "";?></span>
                     </td>
                 </tr>
                 <tr>
@@ -96,7 +96,7 @@
                         Seguro Nacional de Saude:
                     </td>
                     <td>
-                        <text name="sns" /><span><?php echo (!empty($person['sns'])) ? $person['sns'] : "";?></span>
+                        <text name="sns" /><span><?php echo (!empty($user['sns'])) ? $user['sns'] : "";?></span>
                     </td>
                 </tr>
                 </table>

@@ -1,6 +1,6 @@
 <div id="middle" class="wrapper">
     <div class="titulo">
-        <h1>Novo Utilizador</h1>
+        <h1>Alterar Dados</h1>
     </div>
     <div>
         <div id="container" class="has_shadows b_corners t_corners has_borders">
@@ -16,13 +16,13 @@
                                     <tr>
                                         <td class="left">Email:</td>
                                         <td>
-                                            <input class="medium" type="text" name="email" pattern=".{6,80}" value="<?php echo (!empty($person['email'])) ? $person['email'] : "";?>" required/><span>eg. email@example.com</span>
+                                            <input class="medium" type="text" name="email" pattern=".{6,80}" value="<?php echo (!empty($user['email'])) ? $user['email'] : "";?>" required/><span>eg. email@example.com</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="left">Confirmar Email:</td>
                                         <td>
-                                            <input class="medium" type="text" value="<?php echo (!empty($person['email'])) ? $person['email'] : "";?>" name="email1" pattern=".{6,80}" required/><span>eg. email@example.com</span>
+                                            <input class="medium" type="text" value="" name="email1" pattern=".{6,80}" required/><span>eg. email@example.com</span>
                                         </td>
                                     </tr>                                                                                                           <tr>
                                         <td class="left">Password:</td>
@@ -53,13 +53,13 @@
                                     <tr>
                                         <td class="left required">Nome Completo:</td>
                                         <td>
-                                            <input class="big" type="text" name="nome" pattern="[A-Za-z]{5,}" value="<?php echo (!empty($person['name'])) ? $person['name'] : "";?>" required/>
+                                            <input class="big" type="text" name="nome" pattern="[A-Za-z]{5,}" value="<?php echo (!empty($user['name'])) ? $user['name'] : "";?>" required/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="left">Data de Nascimento:</td>
                                         <td>
-                                            <input type="date" value="<?php echo (!empty($person['date_of_birth'])) ? $person['date_of_birth'] : "";?>" id="datepicker" name="datanascimento"><span>(dd/mm/aaaa)</span>
+                                            <input type="date" value="<?php echo (!empty($user['date_of_birth'])) ? $user['date_of_birth'] : "";?>" id="datepicker" name="datanascimento"><span>(dd/mm/aaaa)</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -79,32 +79,32 @@
                                     <tr>
                                         <td class="left">Nacionalidade:</td>
                                         <td>
-                                            <input type="text" value="<?php echo (!empty($person['nationality'])) ? $person['nationality'] : "";?>" name="nacionalidade" pattern="[A-Za-z]{5,}"/>
+                                            <input type="text" value="<?php echo (!empty($user['nationality'])) ? $user['nationality'] : "";?>" name="nacionalidade" pattern="[A-Za-z]{5,}"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="left">Morada:</td>
                                         <td>
-                                            <input class="big" value="<?php echo (!empty($person['address'])) ? $person['address'] : "";?>" type="text" name="morada" pattern="[A-Za-z]{5,}"/>
+                                            <input class="big" value="<?php echo (!empty($user['address'])) ? $user['address'] : "";?>" type="text" name="morada" pattern="[A-Za-z]{5,}"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="left">Codigo Postal:</td>
                                         <td>
-                                            <input type="text" value="<?php echo (!empty($person['post_code'])) ? $person['post_code'] : "";?>" name="postal" pattern="[1-9]{4}\-[1-9]{3}"/><span>(1234-567)</span>
+                                            <input type="text" value="<?php echo (!empty($user['post_code'])) ? $user['post_code'] : "";?>" name="postal" pattern="[1-9]{4}\-[1-9]{3}"/><span>(1234-567)</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="left">Cidade:</td>
                                         <td>
-                                            <input class="text" value="<?php echo (!empty($person['city'])) ? $person['city'] : "";?>" type="text" name="cidade" />
+                                            <input class="text" value="<?php echo (!empty($user['city'])) ? $user['city'] : "";?>" type="text" name="cidade" />
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td class="left">Numero Contribuinte</td>
                                         <td>
-                                            <input type="number" value="<?php echo (!empty($person['fiscal_id'])) ? $person['fiscal_id'] : "";?>" name="contribuinte" />
+                                            <input type="number" value="<?php echo (!empty($user['fiscal_id'])) ? $user['fiscal_id'] : "";?>" name="contribuinte" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -112,7 +112,7 @@
                                             BI/CC:
                                         </td>
                                         <td>
-                                            <input type="number" value="<?php echo (!empty($person['civil_id'])) ? $person['civil_id'] : "";?>" name="bi" pattern=".{8}"/>
+                                            <input type="number" value="<?php echo (!empty($user['civil_id'])) ? $user['civil_id'] : "";?>" name="bi" pattern=".{8}"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -120,7 +120,7 @@
                                             Telemóvel:
                                         </td>
                                         <td>
-                                            <input type="text" value="<?php echo (!empty($person['mobile_phone'])) ? $person['mobile_phone'] : "";?>" name="telemovel" pattern="[9][0-9]{8}" />
+                                            <input type="text" value="<?php echo (!empty($user['mobile_phone'])) ? $user['mobile_phone'] : "";?>" name="telemovel" pattern="[9][0-9]{8}" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -128,7 +128,7 @@
                                             Telefone Fixo:
                                         </td>
                                         <td>
-                                            <input type="number" value="<?php echo (!empty($person['phone'])) ? $person['phone'] : "";?>" name="fixo" />
+                                            <input type="number" value="<?php echo (!empty($user['phone'])) ? $user['phone'] : "";?>" name="fixo" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -136,7 +136,7 @@
                                             Seguro Nacional de Saude:
                                         </td>
                                         <td>
-                                            <input type="number" value="<?php echo (!empty($person['sns'])) ? $person['sns'] : "";?>" name="sns" />
+                                            <input type="number" value="<?php echo (!empty($user['sns'])) ? $user['sns'] : "";?>" name="sns" />
                                         </td>
                                     </tr>
                                     <tr>
