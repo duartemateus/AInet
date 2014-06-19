@@ -57,6 +57,14 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                    if (($_SESSION['user_role'] == 1 || $_SESSION['user_role'] == 3) && $user['id'] == $id_doutor) {
+                        echo "<div class = 'content-row marcar_consulta'> \n";
+                        echo "<a href = '#'><p>Editar Dados</p></a> \n";
+                        echo "<imput type = 'hidden' name = 'doctor' value = '" . $informacao_doutor[$id_doutor]['id'] . "'/> \n";
+                        echo "</div>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="content-row cf">

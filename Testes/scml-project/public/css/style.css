@@ -973,7 +973,7 @@ div.content-row p.search {
     line-height: 1.2;
     text-align: center;
     font-weight: bold;
-    
+
 }
 div.content-row img {
     background-image: url(../img/system/no_portrait.jpg);
@@ -998,6 +998,30 @@ div.content-row img.perfil {
     height: 220px;
     border-radius: 0.3em;
     box-shadow: 0 0 9px gray;
+}
+div.content-row.marcar_consulta a p {
+    width: 126px;
+    border: 1px solid transparent;
+    box-shadow:0 0 5px lightgrey;
+    border-radius: 0.2em; 
+    border-bottom-right-radius: 0.5em;
+    background-color: transparent;
+    padding: 0.4em 0em;
+    color: rgb(102, 153, 204) !important;
+    text-align: center;
+}
+div.content-row.marcar_consulta {
+    position:relative;
+}
+div.content-row.marcar_consulta a{
+    position:absolute;
+    bottom:0;
+    right:0;
+    text-decoration: none !important;
+}
+div.content-row.marcar_consulta a:hover p {
+    background-color: rgba(155, 155, 155, 0.25);
+    color: #C60 !important;
 }
 div.content-text {
     text-align: left;
@@ -1054,27 +1078,6 @@ div.content-other img {
     margin: 0;
     outline: 0;
     border-radius: 0.2em 0.5em 0.2em 0.2em;
-}
-div.content-other div.marcar_consulta {
-    position:relative;
-}
-div.content-other div.marcar_consulta a{
-    position:absolute;
-    bottom:0;
-    right:0;
-}
-
-div.content-other div.marcar_consulta a p {
-    width: 126px;
-    border: 1px solid transparent;
-    box-shadow:0 0 5px lightgrey;
-    border-radius: 0.2em; 
-    border-bottom-right-radius: 0.5em;
-    background-color: transparent;
-    padding: 0.4em 0em;
-}
-div.content-other div.marcar_consulta a:hover p {
-    background-color: rgba(155, 155, 155, 0.25);
 }
 /* Painel de noticias - edicao artigos
 -----------------------------------------------------------------------------*/

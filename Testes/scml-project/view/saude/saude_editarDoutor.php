@@ -37,19 +37,20 @@
                                             <tr>
                                                 <td class="left">Periodos de consulta:</td>
                                                 <td>
-                                                    <select id="select_opt_speciality_horario" name="select_opt_speciality_horario">
-                                                        <?php
-                                                        foreach ($areas_clinicas as $row) {
-                                                            echo "<option value='0'>" . $row['short_name'] . "</option> \n";
-                                                        }
-                                                        echo "</select>";
-                                                        $specialty = explode(", ", $row['specialty_name']);
-                                                        $count = count($availability);
-                                                        echo "<textarea type='text' name='horarios' value=''> </textarea>";
-                                                        for ($i = 0; $i < $count; $i++) {
-                                                            echo "<p class='seta'>" . $specialty[$i] . " - " . $availability[$i] . "</p>";
-                                                        }
-                                                        ?>
+                                                    <?php
+                                                    echo " <select id='select_opt_speciality_horario' name='select_opt_speciality_horario'>";
+                                                    foreach ($areas_clinicas as $row) {
+                                                        echo "<option value='0'>" . $row['short_name'] . "</option> \n";
+                                                    }
+                                                    echo "</select>";
+                                                    $specialty = explode(", ", $informacao_doutor[$id_doutor]['specialty_name']);
+                                                    $str = '';
+                                                    foreach ($specialty as $s) {
+                                                        $str = $str.($str == '' ? $s : "\n" . $s);
+                                                    }
+
+                                                    echo "<textarea type = 'text' name = 'horarios' value = '" . $str . "'> </textarea>";
+                                                    ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -69,7 +70,8 @@
                                         <p>Alterar imagem perfil:</p>
                                         <hr/>
                                         <img id="uploadPreview" class="preview" />
-                                        <input id="uploadImage" type="file" name="myPhoto" onchange="previewImage();" />
+                                        <input id="uploadImage" type="file" name="myPhoto" onchange="previewImage();
+                                               " />
                                     </div>
                                 </div>
                             </div>
