@@ -108,8 +108,22 @@ class controller_PessoalRegistar {
         $db = new model_DB();
         if ($db->connected) {
             // Insert Person
-            $query = "INSERT INTO `person`(`name`, `date_of_birth`, `gender`, `nationality`, `address`, `post_code`, `city`, `email`, `fiscal_id`, `civil_id`, `mobile_phone`, `phone`, `sns`) "
-                . "VALUES ('" . $var['nome'] . "','" . $var['datanascimento'] . "','" . $var['sexo'] . "','" . $var['nacionalidade'] . "','" . $var['morada'] . "','" . $var['postal'] . "','" . $var['cidade'] . "','" . $var['email'] . "','" . $var['contribuinte'] . "','" . $var['bi'] . "','" . $var['telemovel'] . "','" . $var['fixo'] . "','" . $var['sns'] . "')";
+            $nome = $vars['nome'];
+            $datanascimento = $vars['datanascimento'];
+            $sexo = $vars['sexo'];
+            $nacionalidade = $vars['nacionalidade'];
+            $morada = $vars['morada'];
+            $postal = $vars['postal'];
+            $cidade = $vars['cidade'];
+            $email = $vars['email'];
+            $contribuinte = $vars['contribuinte'];
+            $bi = $vars['bi'];
+            $telemovel = $vars['telemovel'];
+            $fixo = $vars['fixo'];
+            $sns = $vars['sns'];
+
+            $query = "INSERT INTO person(name, date_of_birth, gender, nationality, address, post_code, city, email, fiscal_id, civil_id, mobile_phone, phone, sns)
+                    VALUES ( $nome , $datanascimento , $sexo , $nacionalidade , $morada , $postal , $cidade , $email , $contribuinte , $bi , $telemovel , $fixo , $sns )";
             $db->conn->query($query);
             // Get Person ID
             $query = "SELECT * FROM person WHERE email =" . $vars['email'];
@@ -119,8 +133,8 @@ class controller_PessoalRegistar {
             // Hash the Pass
             $hashed_password = password_hash($vars['password'], PASSWORD_DEFAULT);
             // Insert User
-            $query = "INSERT INTO `scml_user`(`email`,`hashed_password` , `salt`, `role`, `person_id`) "
-                . "VALUES ´('" . $var['email'] . "','" . $hashed_password . "','10','4','" . $person_id . "')";
+            $query = "INSERT INTO `scml_user`(`email`,`hashed_password` , `salt`, `role`, `person_id`) 
+                    VALUES ´('$email','$hashed_password','10','4','$person_id')";
             $db->conn->query($query);
             // Authenticate User
             $auth = new controller_Auth();

@@ -58,9 +58,9 @@
                         </div>
                     </div>
                     <?php
-                    if (($_SESSION['user_role'] == 1 || $_SESSION['user_role'] == 3) && $user['id'] == $id_doutor) {
+                    if (($_SESSION['user_role'] <= 1 || $_SESSION['user_role'] == 3) && ($user['id'] == $informacao_doutor[$id_doutor]['u_id'] || $user['id'] == 1)) {
                         echo "<div class = 'content-row marcar_consulta'> \n";
-                        echo "<a href = '#'><p>Editar Dados</p></a> \n";
+                        echo "<a href = './saude_editarDoutor.php?id=" . $id_doutor . "'><p>Editar Dados</p></a> \n";
                         echo "<imput type = 'hidden' name = 'doctor' value = '" . $informacao_doutor[$id_doutor]['id'] . "'/> \n";
                         echo "</div>";
                     }
@@ -81,12 +81,12 @@
                             </legend>
 
                             <?php
-                            if (count($vars['publications']) == 0) {
-                                echo "  <div class='content-row cf'>\n";
-                                echo "<p class='error'>Este Doutor ainda não fez nenhuma publicação. <br></p>";
-                                echo " </div>\n";
-                            } else {
-                                foreach ($vars['publications'] as $pub) {
+                            foreach ($vars['publications'] as $pub) {
+                                if ($pub['u_id'] != $informacao_doutor[$id_doutor]['u_id']) {
+                                    echo "  <div class='content-row cf'>\n";
+                                    echo "<p class='error'>Este Doutor ainda não fez nenhuma publicação. <br></p>";
+                                    echo " </div>\n";
+                                } else {
                                     $timestamp = strtotime($pub['date']);
                                     $day = date("d", $timestamp);
                                     $month = date("M", $timestamp);

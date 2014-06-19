@@ -6,7 +6,7 @@ class controller_SaudeEditarDoutor {
         $vars['title'] = "Santa Casa da Misericórdia de Leiria";
         $vars['keywords'] = "";
         $vars['description'] = "";
-        $vars['firstnavbar'] = 1;
+        $vars['firstnavbar'] = 8;
         $vars['secondnavbar'] = 0;
     }
 
@@ -19,7 +19,7 @@ class controller_SaudeEditarDoutor {
                 $areas_clinicas[$r['id']] = $r;
             }
             $vars['areas_clinicas'] = $areas_clinicas;
-            $query = "SELECT d.id, d.name AS doctor_name, d.research, d.profile, cs.short_name AS specialty_name, ds.availability, ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email, su.photo
+            $query = "SELECT d.id, d.name AS doctor_name, d.research, d.profile, cs.short_name AS specialty_name, ds.availability, ds.clinical_specialty_id, p.name AS pser_nome_completo, p.mobile_phone, p.phone, su.photo_url, su.email, su.photo, su.id as u_id
                         FROM doctor d, doctor_specialty ds, clinical_specialty cs, person p, scml_user su
                         WHERE (d.id = ds.doctor_id AND cs.id = ds.clinical_specialty_id AND d.user_id = p.id AND p.id = su.id)
                         ORDER BY doctor_name";
